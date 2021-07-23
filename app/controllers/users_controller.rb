@@ -14,6 +14,13 @@ class UsersController < ApplicationController
     end
 
     def create
+        # byebug
+        @user = User.new(user_params)
+        if @user.save
+            redirect_to user_path(@user), notice: "New User Created"
+        else
+            render :new
+        end
     end
 
     def edit
@@ -27,7 +34,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :email, :password_digest, :username, :admin, :birth_date)
+        params.require(:user).permit(:first_name, :last_name, :email, :password, :username, :admin, :birth_date)
     end
 
     def get_user
