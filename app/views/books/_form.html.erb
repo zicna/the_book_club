@@ -1,3 +1,5 @@
+<h1>Book Form</h1>
+
 <%= form_for book do |f| %>
     <div>
         <%= f.label :title %>
@@ -19,8 +21,45 @@
     <div>
         <%= f.collection_select( :author_id, authors, :id, :full_name) %>
     </div>
-
     
+    <%# Place for refactor %>
+    <p>Or Create New Author:</p>
+    <%= f.fields_for :author do |author| %>
+        <div>
+            <%= author.label :first_name %>
+            <%= author.text_field :first_name %>
+        </div>
+        <div>
+            <%= author.label :last_name %>
+            <%= author.text_field :last_name %>
+        </div>
+        <div>
+            <%= author.label :image %>
+            <%= author.text_field :image %>
+        </div>
+        <div>
+            <%= author.label :birth_date %>
+            <%= author.date_field :birth_date %>
+        </div>
+        <div>
+            <%= author.label :death_date %>
+            <%= author.date_field :death_date %>
+        </div>
+        <div>
+            <%= author.label :wiki_page %>
+            <%= author.text_field :wiki_page %>
+        </div>
+    <% end %>
+    
+    <p> Choose from existing categories:</p>
+    <div>
+        <%= f.collection_select( :category_id, @categories, :id, :name) %>
+    </div>
+    <p>Or Create New Category:</p>
+    <%= f.fields_for :category do |category| %>
+        <%= category.label :name, "Category name:" %>
+        <%= category.text_field :name %>
+    <% end %>
     
     <div>
         <%= f.submit %>
