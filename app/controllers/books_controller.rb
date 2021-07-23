@@ -2,6 +2,7 @@ class BooksController < ApplicationController
     before_action :get_book, only: [:show, :edit, :update, :create, :destroy]
     before_action :set_book, only: :new
     before_action :get_books, only: :index
+    before_action :get_authors, only: :new
     
     def index
     end
@@ -46,14 +47,17 @@ class BooksController < ApplicationController
     end
 
     def get_book
-        @book = book.find_by(id: params[:id])
+        @book = Book.find_by(id: params[:id])
     end
 
     def set_book
-        @book = book.new
+        @book = Book.new
     end
 
     def get_books
-        @books = book.all
+        @books = Book.all
+    end
+    def get_authors
+        @authors = Author.all
     end
 end
