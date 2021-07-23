@@ -1,0 +1,28 @@
+<%= form_for book do |f| %>
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+    <div>
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+    </div>
+    <div>
+        <%= f.label :price %>
+        <%= f.number_field :price, step: 0.1 %>
+    </div>
+    <div>
+        <%= f.label :invt %>
+        <%= f.text_field :invt %>
+    </div>
+    <p> Choose from existing authors:</p>
+    <div>
+        <%= f.collection_select( :author_id, authors, :id, :full_name) %>
+    </div>
+
+    
+    
+    <div>
+        <%= f.submit %>
+    </div>
+<% end %>
