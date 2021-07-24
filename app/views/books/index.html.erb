@@ -1,0 +1,16 @@
+<table>
+    <tr>
+       <th> Author</th>
+       <th>Title</th>
+       <th>Category</th>
+       <th>Price</th>
+    </tr>
+    <% @books.each do |book| %>
+    <tr>
+        <th><%= book.author.full_name %></th>
+        <th><%= book.title %></th>
+        <th><%= book.category.name %></th>
+        <th><%= book.price %></th>
+    </tr>
+    <% end %>
+</table>

@@ -1,0 +1,29 @@
+<%= form_for author do |f| %>
+    <div>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+    </div>
+    <div>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+    </div>
+    <div>
+        <%= f.label :image %>
+        <%= f.text_field :image %>
+    </div>
+    <div>
+        <%= f.label :birth_date %>
+        <%= f.date_field :birth_date %>
+    </div>
+    <div>
+        <%= f.label :death_date %>
+        <%= f.date_field :death_date %>
+    </div>
+    <div>
+        <%= f.label :wiki_page %>
+        <%= f.text_field :wiki_page %>
+    </div>
+    <div>
+        <%= f.submit %>
+    </div>
+<% end %>

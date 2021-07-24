@@ -1,5 +1,5 @@
 <h1>this is book show page</h1>
 
-<%= @book.title %>
-<%= @book.author.first_name %>
-<%= @book.category.name %>
+<p>Book title: <%= @book.title %></p>
+<p>Book author: <%= @book.author.full_name %></p>
+<p>Category: <%= @book.category.name %></p>
