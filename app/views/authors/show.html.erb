@@ -1,0 +1,6 @@
+<h2>This is show page</h2>
+
+<%= render partial: 'author', locals: {author: @author} %>
+
+<%= link_to "Edit author", edit_author_path(@author) %>
+<%= link_to "Delete author", author_path(@author), method: :delete %>
