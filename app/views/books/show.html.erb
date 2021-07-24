@@ -1,7 +1,7 @@
 <h1>this is book show page</h1>
 
 <p>Book title: <%= @book.title %></p>
-<p>Book author: <%= @book.author.full_name if @book.author%></p>
+<p>Book author: <%= link_to @book.author.full_name, author_path(@book.author) if @book.author%></p>
 <p>Category: <%= @book.category.name %></p>
 
 <%= link_to "Edit Book", edit_book_path(@book)%>
