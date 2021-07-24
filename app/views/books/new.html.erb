@@ -1,1 +1,7 @@
-<%= render partial: 'form', locals: {book: @book, authors: @authors} %>
+<%= render partial: 'form', locals: {
+    book: @book,
+    authors: @authors,
+    categories: @categories
+    } %>
+
+<%= link_to "Return to Books", books_path %>

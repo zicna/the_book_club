@@ -3,3 +3,5 @@
 <p>Book title: <%= @book.title %></p>
 <p>Book author: <%= @book.author.full_name %></p>
 <p>Category: <%= @book.category.name %></p>
+
+<%= link_to "Edit Book", edit_book_path(@book)%>

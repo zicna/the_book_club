@@ -53,7 +53,7 @@
     
     <p> Choose from existing categories:</p>
     <div>
-        <%= f.collection_select( :category_id, @categories, :id, :name) %>
+        <%= f.collection_select( :category_id, categories, :id, :name) %>
     </div>
     <p>Or Create New Category:</p>
     <%= f.fields_for :category do |category| %>

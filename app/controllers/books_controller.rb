@@ -2,8 +2,8 @@ class BooksController < ApplicationController
     before_action :get_book, only: [:show, :edit, :update, :create, :destroy]
     before_action :set_book, only: :new
     before_action :get_books, only: :index
-    before_action :get_authors, only: :new
-    before_action :get_categries, only: :new
+    before_action :get_authors, only: [:new, :edit]
+    before_action :get_categries, only: [:new, :edit]
     
     def index
     end
