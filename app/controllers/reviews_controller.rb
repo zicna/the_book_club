@@ -25,6 +25,7 @@ class ReviewsController < ApplicationController
     end
 
     def edit
+        byebug
     end
 
     def update
