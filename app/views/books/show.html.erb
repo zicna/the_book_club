@@ -9,8 +9,8 @@
 <p>Reviews:</p>
 <% @book.reviews.each do |review| %>
     <p>
-        <%= review.user%>:
-        <%= review.content%>    
+        <%= review.user.full_name %>:
+        <%= review.content %>    
     </p>
 <% end %>
 
@@ -20,7 +20,7 @@
 <div>
     <%= form_for :review, url: reviews_path, method: :post do |r| %>
         <%= r.hidden_field :book_id, value: @book.id %>
-        <%# <%= r.hidden_field :user_id, value: sessins[:user_id] %> 
+        <%# <%= r.hidden_field :user_id, value: sessions[:user_id] %> 
         <div>
             <%= r.label :content %>
             <%= r.text_area :content %>

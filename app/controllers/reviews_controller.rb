@@ -14,13 +14,13 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        byebug
+        # byebug
         @book = Book.find_by(id: params[:review][:book_id])
         @review = Review.new(review_params)
         if @review.save
             redirect_to book_path(@book), notice: "New review Created"
         else
-            redirect_to book_path(@book)
+            redirect_to book_path(@book), alert: "Review not created"
         end
     end
 
