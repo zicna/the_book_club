@@ -1,0 +1,17 @@
+<%= form_for review do |f| %>
+    <p>
+        <%= f.label :content %>
+        <%= f.text_area :content %>
+    </p>
+    <p>
+        <%= f.label :mark %>
+        <%= f.number_field %>
+    </p>
+    <%# @we wouldn't have acces to @user rather we will use 
+    sessins[:user_id]  %>
+    <%= f.hidden_field :book_id, value="@book.id" %>
+    <%= f.hidden_field :user_id, value="@user.id"%>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
