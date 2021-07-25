@@ -6,12 +6,21 @@
 <%= link_to "Edit Book", edit_book_path(@book)%>
 
 <hr>
-<p>Reviews:</p>
+<h4>Reviews:</h4>
 <% @book.reviews.each do |review| %>
-    <p>
-        <%= review.user.full_name %>:
-        <%= review.content %>    
-    </p>
+    <div>
+        <p>by:
+            <b><%= review.user.full_name %></b> on <%= review.date_of_review %>
+        </p>
+        
+        <p>
+            <%= review.content %>
+        </p> 
+        <p>mark:
+            <%= review.mark %>
+        </p> 
+        (<%= link_to "Edit", edit_review_path(review) %>)
+    </div>
 <% end %>
 
 
