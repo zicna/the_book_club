@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+body {
+    
+}
+ /* .bg-image {
+    outline: 2px solid black;
+    padding: 20em;
+    background-repeat: no-repeat;
+    background-position: 100px 10px;
+    background-size: 10px;
+ } */
+ /* <%= image_tag 'background/book_store.jpeg' %> */

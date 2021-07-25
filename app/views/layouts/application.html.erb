@@ -11,12 +11,14 @@
   </head>
 
   <body>
+    <div class="bg-image">
+    </div>
     <% flash.each do |type, msg| %>
-    
       <p>
         <%= type %> : <%= msg%>
       </p>
     <% end %>
+    <%= render partial: 'layouts/nav_bar' %>
     <%= yield %>
   </body>
 </html>
