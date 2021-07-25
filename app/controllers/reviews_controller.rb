@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
     before_action :get_review, only: [:show, :edit, :update, :create, :destroy]
     before_action :set_review, only: :new
     before_action :get_reviews, only: :index
+    before_action :get_book, only: :edit
     
     def index
     end
@@ -25,13 +26,13 @@ class ReviewsController < ApplicationController
     end
 
     def edit
-        byebug
+        # byebug
     end
 
     def update
         @review.update(review_params)
         if @review.save
-            redirect_to review_path(@review), notice: "The review was successfully updated"
+            redirect_to book_path(@review.book_id), notice: "The review was successfully updated"
         else
             render :edit
         end
@@ -59,5 +60,9 @@ class ReviewsController < ApplicationController
 
     def get_reviews
         @reviews = Review.all
+    end
+
+    def get_book
+        @book = Book.find_by(id: @review.book_id)
     end
 end
