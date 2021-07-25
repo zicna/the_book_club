@@ -3,5 +3,35 @@
 <p>Book title: <%= @book.title %></p>
 <p>Book author: <%= link_to @book.author.full_name, author_path(@book.author) if @book.author%></p>
 <p>Category: <%= @book.category.name %></p>
-
 <%= link_to "Edit Book", edit_book_path(@book)%>
+
+<hr>
+<p>Reviews:</p>
+<% @book.reviews.each do |review| %>
+    <p>
+        <%= review.user%>:
+        <%= review.content%>    
+    </p>
+<% end %>
+
+
+<hr>
+
+<div>
+    <%= form_for :review, url: reviews_path, method: :post do |r| %>
+        <%= r.hidden_field :book_id, value: @book.id %>
+        <%# <%= r.hidden_field :user_id, value: sessins[:user_id] %> 
+        <div>
+            <%= r.label :content %>
+            <%= r.text_area :content %>
+        </div>
+        <div>
+            <%= r.label :mark %>
+            <%= r.number_field :mark %>
+        </div>
+        <div>
+            <%= r.submit "Create Review" %>
+        </div>
+    <% end %>
+</div>
+

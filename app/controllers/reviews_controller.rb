@@ -14,11 +14,13 @@ class ReviewsController < ApplicationController
     end
 
     def create
+        byebug
+        @book = Book.find_by(id: params[:review][:book_id])
         @review = Review.new(review_params)
         if @review.save
-            redirect_to review_path(@review), notice: "New review Created"
+            redirect_to book_path(@book), notice: "New review Created"
         else
-            render :new
+            redirect_to book_path(@book)
         end
     end
 

@@ -4,6 +4,7 @@ class BooksController < ApplicationController
     before_action :get_books, only: :index
     before_action :get_authors, only: [:new, :edit]
     before_action :get_categries, only: [:new, :edit]
+    before_action :get_book_reviews, only: :show
     
     def index
     end
@@ -67,5 +68,9 @@ class BooksController < ApplicationController
 
     def get_categries
         @categories = Category.all
+    end
+    
+    def get_book_reviews
+        @reviews = @book.reviews
     end
 end
