@@ -1,12 +1,5 @@
 <%= form_for user do |f| %>
-    <% if user.errors.any? %>
-        <h2><%= pluralize(user.errors.count, "Error") %> prohibited this user from being saved:</h2>
-        <ul>
-            <% user.errors.full_messages.each do |message|  %>
-               <li> <%= message %></li>
-            <% end %>
-        </ul>
-    <% end %>
+    <%= show_errors_if_any(user)%>
     <div>
         <%= f.label :first_name %>
         <%= f.text_field :first_name%>
