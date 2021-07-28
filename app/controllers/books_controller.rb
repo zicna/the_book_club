@@ -27,6 +27,8 @@ class BooksController < ApplicationController
     end
 
     def edit
+        @book.build_category
+        @book.build_author
     end
 
     def update
