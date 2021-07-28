@@ -1,37 +1,39 @@
-<%= form_for user do |f| %>
+<div>
+    <%= form_for user do |f| %>
+        
+        <%= render partial: 'errors', locals: {user: user} if user.errors.any? %>
+        
+        <div>
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name%>
+        </div>
+        <div>
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name %>
+        </div>
+        <div>
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+        </div>
+        <div>
+            <%= f.label :username %>
+            <%= f.text_field :username %>
+        </div>
+        <div>
+            <%= f.label :password %>
+            <%= f.text_field :password %>
+        </div>
+        <div>
+            <%= f.label :birth_date %>
+            <%= f.date_field :birth_date %>
+        </div>
+        <div>Admin?
+            <%= f.label :admin, "Yes"%>
+            <%= f.radio_button :admin, "true" %>
+            <%= f.label :admin, "No" %>
+            <%= f.radio_button :admin, "false" %>
+        </div>
     
-    <%= render partial: 'errors', locals: {user: user} if user.errors.any? %>
-    
-    <div>
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name%>
-    </div>
-    <div>
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name %>
-    </div>
-    <div>
-        <%= f.label :email %>
-        <%= f.text_field :email %>
-    </div>
-    <div>
-        <%= f.label :username %>
-        <%= f.text_field :username %>
-    </div>
-    <div>
-        <%= f.label :password %>
-        <%= f.text_field :password %>
-    </div>
-    <div>
-        <%= f.label :birth_date %>
-        <%= f.date_field :birth_date %>
-    </div>
-    <div>Admin?
-        <%= f.label :admin, "Yes"%>
-        <%= f.radio_button :admin, "true" %>
-        <%= f.label :admin, "No" %>
-        <%= f.radio_button :admin, "false" %>
-    </div>
-
-   <div> <%= f.submit %></div>
-<% end %>
+       <div> <%= f.submit %></div>
+    <% end %>
+</div>
