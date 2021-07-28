@@ -1,2 +1,32 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<%= form_tag({
+    controller: "sessions",
+    action: "create",
+    method: "post"
+}) do %>
+<div>
+    <%= label_tag :user["first_name"] %>
+    <%= text_field_tag :user["first_name"] %>
+</div>
+<div>
+    <%= label_tag :user["last_name"] %>
+    <%= text_field_tag :user["last_name"] %>
+</div>
+<div>
+    <%= label_tag :user["email"] %>
+    <%= text_field_tag :user["email"] %>
+</div>
+<div>
+    <%= label_tag :user["username"] %>
+    <%= text_field_tag :user["username"] %>
+</div>
+<div>
+    <%= label_tag :user["password"] %>
+    <%= password_field_tag :user["password"] %>
+</div>
+<div>
+    <%= label_tag :user["birth_date"] %>
+    <%= date_field_tag :user["birth_date"] %>
+</div>
+<%= submit_tag "Login"%>
+<% end %>
+
