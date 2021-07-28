@@ -1,7 +1,7 @@
 <%= form_for user do |f| %>
-    <%= show_errors_if_any(user)%>
     
     <%= render partial: 'errors', locals: {user: user} if user.errors.any? %>
+    
     <div>
         <%= f.label :first_name %>
         <%= f.text_field :first_name%>
