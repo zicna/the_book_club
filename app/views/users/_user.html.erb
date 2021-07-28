@@ -1,5 +1,9 @@
+<% if user %>
+    <h3><%= user.full_name %></h3>
+    <p>Email: <b><%= user.email %></b></p>
+    <p>Date of birth: <b><%= user.birth_date %></b></p>
 
-<h3><%= user.full_name %></h3>
-<p>Email: <b><%= user.email %></b></p>
-<p>Username: <b><%= user.username %></b></p>
-<p>Date of birth: <b><%= user.birth_date %></b></p>
+    <%= link_to "Edit", edit_user_path(user) %> |
+    <%= link_to "Delete", user_path(user), method: :delete %>
+
+<% end %>
