@@ -1,67 +1,49 @@
 <h1>Book Form</h1>
 
-<%= form_for book do |f| %>
-    <div>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-    </div>
-    <div>
-        <%= f.label :description %>
-        <%= f.text_area :description %>
-    </div>
-    <div>
-        <%= f.label :price %>
-        <%= f.number_field :price, step: 0.1 %>
-    </div>
-    <div>
-        <%= f.label :invt %>
-        <%= f.text_field :invt %>
-    </div>
-    <p> Choose from existing authors:</p>
-    <div>
-        <%= f.collection_select( :author_id, authors, :id, :full_name) %>
-    </div>
-    
-    <%# Place for refactor %>
-    <p>Or Create New Author:</p>
-    <%= f.fields_for :author do |author| %>
+<div>
+    <%= form_for book do |f| %>
+
+    <%= render partial: 'users/errors', locals: {user: book} if book.errors.any?%>
         <div>
-            <%= author.label :first_name %>
-            <%= author.text_field :first_name %>
+            <%= f.label :title %>
+            <%= f.text_field :title %>
         </div>
         <div>
-            <%= author.label :last_name %>
-            <%= author.text_field :last_name %>
+            <%= f.label :description %>
+            <%= f.text_area :description %>
         </div>
         <div>
-            <%= author.label :image %>
-            <%= author.text_field :image %>
+            <%= f.label :price %>
+            <%= f.number_field :price, step: 0.1 %>
         </div>
         <div>
-            <%= author.label :birth_date %>
-            <%= author.date_field :birth_date %>
+            <%= f.label :invt %>
+            <%= f.text_field :invt %>
         </div>
+        <hr>
+        <p> Choose from existing authors:</p>
         <div>
-            <%= author.label :death_date %>
-            <%= author.date_field :death_date %>
+            <%= f.collection_select( :author_id, authors, :id, :full_name) if authors %>
         </div>
+        
+        <%# Place for refactor %>
+        <p>Or Create New Author:</p>
+        <%= f.fields_for :author do |author| %>
+            <%= render partial: 'form_author', locals: {author: author} %>
+        <% end %>
+        <hr>
+        <p> Choose from existing categories:</p>
         <div>
-            <%= author.label :wiki_page %>
-            <%= author.text_field :wiki_page %>
+            <%= f.collection_select( :category_id, categories, :id, :name) if categories %>
+        </div>
+        <p>Or Create New Category:</p>
+        <%= f.fields_for :category do |category| %>
+            <%= category.label :name, "Category name:" %>
+            <%= category.text_field :name %>
+        <% end %>
+        <hr>
+        <div>
+            <%= f.submit %>
         </div>
     <% end %>
-    
-    <p> Choose from existing categories:</p>
-    <div>
-        <%= f.collection_select( :category_id, categories, :id, :name) %>
-    </div>
-    <p>Or Create New Category:</p>
-    <%= f.fields_for :category do |category| %>
-        <%= category.label :name, "Category name:" %>
-        <%= category.text_field :name %>
-    <% end %>
-    
-    <div>
-        <%= f.submit %>
-    </div>
-<% end %>
+</div>

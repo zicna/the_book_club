@@ -1,6 +1,8 @@
 
 <div>
     <%= form_for author do |f| %>
+
+    <%= render partial: 'users/errors', locals: {user: author} if author.errors.any? %>
         <div>
             <%= f.label :first_name %>
             <%= f.text_field :first_name %>
