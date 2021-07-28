@@ -12,10 +12,13 @@
 
   <body>
     <div class="bg-image">
+  </div>
+
+    <div class="flash-message">
+      <% flash.each do |type, msg| %>
+        <%= content_tag :div, msg, class: type%>
+      <% end %>
     </div>
-    <% flash.each do |type, msg| %>
-      <%= content_tag :div, msg, class: type%>
-    <% end %>
     <%= render partial: 'layouts/nav_bar' %>
     <%= yield %>
   </body>
