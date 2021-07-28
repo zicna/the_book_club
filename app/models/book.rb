@@ -4,6 +4,12 @@ class Book < ApplicationRecord
   has_many :reviews
   has_many :users, through: :reviews
 
+  validates :title, presence: true, uniqueness: true
+  validates :invt, presence: true
+  validates :description, presence: true
+  validates :price, presence: true
+  validates :price, numericality: {:greater_than => 0.1}
+
   accepts_nested_attributes_for :author, reject_if: ->(attributes){ attributes['first_name'].blank? }, allow_destroy: true
   accepts_nested_attributes_for :category, reject_if: ->(attributes){ attributes['name'].blank? }, allow_destroy: true
 
