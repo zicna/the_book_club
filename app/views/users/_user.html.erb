@@ -1,5 +1,5 @@
 <% if user %>
-    <h3><%= user.full_name %></h3>
+    <h3><%= link_to user.full_name, user_path(user) %></h3>
     <p>Email: <b><%= user.email %></b></p>
     <p>Date of birth: <b><%= user.birth_date %></b></p>
 
