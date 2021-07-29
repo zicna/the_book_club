@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_22_040523) do
+ActiveRecord::Schema.define(version: 2021_07_29_032008) do
 
   create_table "authors", force: :cascade do |t|
     t.string "first_name"
@@ -59,9 +59,11 @@ ActiveRecord::Schema.define(version: 2021_07_22_040523) do
     t.string "email", null: false
     t.string "password_digest", null: false
     t.boolean "admin", default: false
-    t.date "birth_date", null: false
+    t.date "birth_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "uid"
+    t.string "provider"
   end
 
   add_foreign_key "books", "authors"
