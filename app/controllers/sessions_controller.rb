@@ -38,13 +38,14 @@ class SessionsController < ApplicationController
       u.uid = auth['uid']
       u.provider = auth['provider']
     end
-    if user.valid?
-      flash[:message] = "You are logged in with google"
-      redirect_to authors_path
-    else
-      flash[:message] = user.errors.full_messages.join(", ")
-      redirect_to authors_path
-    end
+    # finish where to redirect 
+    # if user.valid?
+    #   flash[:message] = "You are logged in with google"
+    #   redirect_to authors_path
+    # else
+    #   flash[:message] = user.errors.full_messages.join(", ")
+    #   redirect_to authors_path
+    # end
   end
 
   def destroy
