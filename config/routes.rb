@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   post '/login' => "sessions#create"
   delete '/logout' => "sessions#destroy"
 
+  get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
+  #our post (response) will be handled by middleware
+  #middleware is expectiong this route
+
   resources :reviews
   resources :users
   resources :authors
