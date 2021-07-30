@@ -17,8 +17,9 @@
       <% end %>
     </div>
     <%= button_to "Log in with google", "/auth/google_oauth2" %>
-    <%= button_to "Log in", '/login', method: "get" %>
-    <%= button_to "Sign in", '/signin', method: "get"%>
+     <%= button_to "Log in", '/login', method: "get"%>
+    <%= button_to "Sign up", '/signup', method: "get" %>
+   
   <hr>
     <%= yield %>
   </body>

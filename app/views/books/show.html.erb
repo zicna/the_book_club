@@ -7,7 +7,7 @@
 
 <hr>
 <h4>Reviews:</h4>
-<% @book.reviews.each do |review| %>
+<% @reviews.each do |review| %>
     <div>
         <p>by:
             <b><%= review.user.full_name %></b> on <%= review.date_of_review %>
@@ -28,7 +28,7 @@
 <div>
     <%= form_for :review, url: reviews_path, method: :post do |r| %>
         <%= r.hidden_field :book_id, value: @book.id %>
-        <%# <%= r.hidden_field :user_id, value: sessions[:user_id] %> 
+        <%= r.hidden_field :user_id, value: session[:user_id] %>
         <div>
             <%= r.label :content %>
             <%= r.text_area :content %>
