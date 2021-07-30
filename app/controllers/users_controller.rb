@@ -5,6 +5,12 @@ class UsersController < ApplicationController
     before_action :get_users, only: :index
     
     def index
+        if is_admin?
+            render :index
+        else
+            flash.alert = "Acces denied"
+            redirect_to "/"
+        end
     end
 
     def show
