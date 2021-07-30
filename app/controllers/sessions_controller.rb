@@ -7,27 +7,28 @@ class SessionsController < ApplicationController
   end
 
   def create
-    
+    # byebug
     @user = User.find_or_create_by(email: params[:user][:email]) do |u|
       u.first_name = params[:user][:first_name],
       u.last_name = params[:user][:last_name],
       u.email = params[:user][:email],
       u.password_digest = params[:user][:password],
       u.birth_date = params[:user][:birth_date]
+    end
+    # redirect_to "/" and return unless @user.authenticate(params[:user][:password])
+    # return head(:forbidden) unless @user.authenticate(params[:user][:password])
+    if !@user.authenticate(params[:user][:password])
+      flash.notice = "Credentials not valid, please try again."
+      redirect_to "/"
+      return
+    end
 
-    return head(:forbidden) unless @user.authenticate(params[:user][:password])
-    end
- 
-    if @user.valid?
-      session[:user_id] = @user.id
-      redirect_to user_path(@user)
-    else
-      redirect_to login_path
-    end
+    valid_user
+
   end
 
   def omniauth #log user with google
-    user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
+    @user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
       u.first_name = auth['info']['first_name']
       u.last_name = auth['info']['last_name']
       u.email = auth['info']['email']
@@ -36,14 +37,7 @@ class SessionsController < ApplicationController
       u.provider = auth['provider']
     end
     
-    if user.valid?
-      flash[:notice] = "You are logged in with google"
-      redirect_to "/"
-      return
-    else
-      flash[:notice] = user.errors.full_messages.join(", ")
-      redirect_to "/"
-    end
+    valid_user
   end
 
   def destroy
@@ -54,7 +48,18 @@ class SessionsController < ApplicationController
   end
 
   private
+
   def auth
     request.env['omniauth.auth']
+  end
+  def valid_user
+    if @user.valid?
+      session[:user_id] = @user.id
+      flash[:notice] = "You are logged."
+      redirect_to user_path(@user)
+    else
+      flash[:notice] = "Upps, something went wrong. Please check your credetials."
+      redirect_to "/"
+    end
   end
 end

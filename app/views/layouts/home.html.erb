@@ -11,16 +11,15 @@
   </head>
 
   <body>
-    <div class="bg-image">
-  </div>
-
     <div class="flash-message">
       <% flash.each do |type, msg| %>
         <%= content_tag :div, msg, class: type%>
       <% end %>
     </div>
-    <%= render partial: 'layouts/nav_bar' %>
-    <hr>
+    <%= button_to "Log in with google", "/auth/google_oauth2" %>
+    <%= button_to "Log in", '/login', method: "get" %>
+    <%= button_to "Sign in", '/signin', method: "get"%>
+  <hr>
     <%= yield %>
   </body>
 </html>

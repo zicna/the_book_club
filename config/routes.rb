@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   root "sessions#hello"
-  get '/login' => "sessions#new"
-  post '/login' => "sessions#create"
-  post '/logout' => "sessions#destroy"
+  #users controller is responsible for login since we will be creating new user and that is interacting directly with User model
+  get '/login' => "users#new"
+  post '/login' => "users#create"
+  # sessions controller is responsible to sign in a user
+  get '/signin' => "sessions#new"
+  post '/signin' => "sessions#create"
 
+  post '/logout' => "sessions#destroy"
+  #logging you in with google
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
   #our post (response) will be handled by middleware
   #middleware is expectiong this route

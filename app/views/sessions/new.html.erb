@@ -4,31 +4,18 @@
         action: "create",
         method: "post"
     }) do %>
+    
     <div>
-        <%= label_tag :user["first_name"] %>
-        <%= text_field_tag :user["first_name"] %>
+        <%= label_tag "user[email]", "Email:" %>
+        <%= text_field_tag "user[email]" %>
     </div>
+    
     <div>
-        <%= label_tag :user["last_name"] %>
-        <%= text_field_tag :user["last_name"] %>
+        <%= label_tag "user[password]", "Password:" %>
+        <%= password_field_tag "user[password]" %>
     </div>
-    <div>
-        <%= label_tag :user["email"] %>
-        <%= text_field_tag :user["email"] %>
-    </div>
-    <div>
-        <%= label_tag :user["username"] %>
-        <%= text_field_tag :user["username"] %>
-    </div>
-    <div>
-        <%= label_tag :user["password"] %>
-        <%= password_field_tag :user["password"] %>
-    </div>
-    <div>
-        <%= label_tag :user["birth_date"] %>
-        <%= date_field_tag :user["birth_date"] %>
-    </div>
-    <%= submit_tag "Login"%>
+    
+    <%= submit_tag "Sign In"%>
     <% end %>
 </div>
 

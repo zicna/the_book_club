@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :get_user, only: [:show, :edit, :update, :create, :destroy]
+    before_action :get_user, only: [:show, :edit, :update, :destroy]
     before_action :set_user, only: :new
     before_action :get_users, only: :index
     
@@ -17,8 +17,10 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
+            session[:user_id] = @user.id
             redirect_to user_path(@user), notice: "New User Created"
         else
+            flash.alert = "Uuups something went wrong."
             render :new
         end
     end
@@ -31,6 +33,7 @@ class UsersController < ApplicationController
         if @user.save
             redirect_to user_path(@user), notice: "The user was successfully updated"
         else
+            flash.alert = "Uuups something went wrong."
             render :edit
         end
 
