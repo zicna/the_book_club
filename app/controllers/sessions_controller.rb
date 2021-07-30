@@ -55,7 +55,7 @@ class SessionsController < ApplicationController
   def valid_user
     if @user.valid?
       session[:user_id] = @user.id
-      flash[:notice] = "You are logged."
+      flash[:notice] = "You are logged in."
       redirect_to user_path(@user)
     else
       flash[:notice] = "Upps, something went wrong. Please check your credetials."

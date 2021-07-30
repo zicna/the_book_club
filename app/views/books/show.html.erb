@@ -4,6 +4,7 @@
 <p>Book author: <%= link_to @book.author.full_name, author_path(@book.author) if @book.author%></p>
 <p>Category: <%= @book.category.name %></p>
 <%= link_to "Edit Book", edit_book_path(@book)%>
+<%= link_to "All Reviews", book_reviews_path(@book.id)%>
 
 <hr>
 <h4>Reviews:</h4>
@@ -18,7 +19,7 @@
         <p>mark:
             <%= review.mark %>
         </p> 
-        (<%= link_to "Edit", edit_review_path(review) %>)
+        (<%= link_to "Edit", edit_book_review_path(review) %>)
     </div>
 <% end %>
 

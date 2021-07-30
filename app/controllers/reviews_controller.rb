@@ -2,10 +2,17 @@ class ReviewsController < ApplicationController
    
     before_action :get_review, only: [:show, :edit, :update, :create, :destroy]
     before_action :set_review, only: :new
-    before_action :get_reviews, only: :index
+    # before_action :get_reviews, only: :index
     before_action :get_book, only: :edit
+    # before_action :get_reviews_from_nested_route, only: :index
     
     def index
+        if nested_route?
+            @book = Book.find_by(id: params[:book_id])
+            @reviews = @book.reviews
+        else
+            get_reviews
+        end
     end
 
     def show
@@ -65,4 +72,18 @@ class ReviewsController < ApplicationController
     def get_book
         @book = Book.find_by(id: @review.book_id)
     end
+
+    def nested_route?
+        params[:book_id] ? true : false
+    end
+    
+    # def get_book_from_nested_route
+    #     if params[:book_id].present? && @book = Book.find_by(id: params[:book_id])
+    #         @book
+    #     end
+    # end
+
+    # def get_reviews_from_nested_route
+    #     @book_reviews = get_book_from_nested_route.reviews
+    # end
 end
