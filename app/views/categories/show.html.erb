@@ -1,7 +1,17 @@
 <h2><%= @category.name %></h2>
 <p><%= @category.description %></p>
+<%= content_tag :div do %>
+    <%= link_to 'All Categories |', categories_path %>
+<% end %>
+
+<%= content_tag :div  if is_admin? do %>
+    <%= link_to "Edit |", edit_category_path(@category) %>
+    <%= link_to "Delete |", category_path(@category), method: :delete %>
+<% end %>
+
+
 
 <h3>Check out books we have under <%= @category.name %> category: </h3>
 <% @books.each do |book| %>
-    <p><%= book.title %></p>
+    <p><%= link_to book.title, book_path(book) %></p>
 <% end %>
