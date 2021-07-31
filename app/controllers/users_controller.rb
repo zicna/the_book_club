@@ -14,7 +14,10 @@ class UsersController < ApplicationController
     end
 
     def show
-        redirect_to users_path unless @user
+        if current_user != @user
+            flash.alert = "Acces denied"
+            redirect_to "/"
+        end
     end
 
     def new
