@@ -3,7 +3,7 @@
 <p>Book title: <%= @book.title %></p>
 <p>Book author: <%= link_to @book.author.full_name, author_path(@book.author) if @book.author%></p>
 <p>Category: <%= @book.category.name %></p>
-<%= link_to "Edit Book", edit_book_path(@book)%>
+<%= link_to "Edit Book", edit_book_path(@book) if is_admin?%>
 <%= link_to "All Reviews", book_reviews_path(@book.id)%>
 
 <hr>
@@ -19,7 +19,7 @@
         <p>mark:
             <%= review.mark %>
         </p> 
-        (<%= link_to "Edit", edit_book_review_path(review) %>)
+        <%= link_to "(Edit)", edit_book_review_path(@book, review) if review.user == current_user%>
     </div>
 <% end %>
 
