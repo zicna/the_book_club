@@ -19,13 +19,15 @@ module ApplicationHelper
     end
 
     def current_user
-        if logged_in? 
+        if logged_in? && User.find_by(id: session[:user_id])
             User.find_by(id: session[:user_id])
+        else
+            false
         end
     end
 
     def is_admin?
-        current_user.admin
+        current_user ? current_user.admin : false
     end
 
 
