@@ -1,4 +1,5 @@
 <%= content_tag :div, 'text' do %> 
+    <%= content_tag :p, review.user.full_name %>
     <%= content_tag :p, review.book.title %>
     <%= content_tag :p, review.content %>
     <%= content_tag :p, review.mark %>

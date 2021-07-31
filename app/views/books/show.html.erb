@@ -1,32 +1,18 @@
 <h1>this is book show page</h1>
 
+<%= link_to "Back to all Books", books_path %>
 <p>Book title: <%= @book.title %></p>
-<p>Book author: <%= link_to @book.author.full_name, author_path(@book.author) if @book.author%></p>
-<p>Category: <%= @book.category.name %></p>
+<p>Book author: <%= link_to @book.author.full_name, author_path(@book.author) if @book.author %></p>
+<p>Category: <%= link_to @book.category.name, category_path(@book.category) if @book.category %></p>
 <%= content_tag :div if is_admin? do %>
     <%= link_to "Edit Book", edit_book_path(@book) %>
     <%= link_to "Delete Book", book_path(@book), method: :delete%>
 <% end %>
-<%= link_to "All Reviews", book_reviews_path(@book.id)%>
-
+<%= link_to "All Reviews for '#{@book.title}' book", book_reviews_path(@book.id)%>
 <hr>
+
 <h4>Reviews:</h4>
-<% @reviews.each do |review| %>
-    <div>
-        <p>by:
-            <b><%= review.user.full_name %></b> on <%= review.date_of_review %>
-        </p>
-        <p>
-            <%= review.content %>
-        </p> 
-        <p>mark:
-            <%= review.mark %>
-        </p> 
-       
-    </div>
-<% end %>
-
-
+<%= render partial: "reviews/review", collection: @reviews %>
 <hr>
 
 <%= render partial: 'reviews/form', locals: {
