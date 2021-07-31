@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
     before_action :get_category, only: [:show, :edit, :update, :create, :destroy]
     before_action :set_category, only: :new
     before_action :get_categories, only: :index
+    before_action :get_books, only: :show
     # before_action :remove_category_id_form_books, only: :destroy
     
     def index
@@ -45,7 +46,7 @@ class CategoriesController < ApplicationController
 
     private
     def category_params
-        params.require(:category).permit(:first_name, :last_name, :image, :birth_date, :death_date, :wiki_page)
+        params.require(:category).permit(:name, :description)
     end
 
     def get_category
@@ -58,6 +59,10 @@ class CategoriesController < ApplicationController
 
     def get_categories
         @categories = Category.all
+    end
+
+    def get_books
+        @books = Book.get_books_by_category(@category.id)
     end
     
    
