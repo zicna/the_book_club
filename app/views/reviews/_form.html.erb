@@ -9,8 +9,8 @@
     </p>
     <%# @we wouldn't have acces to @user rather we will use 
     sessins[:user_id]  %>
-    <%= f.hidden_field :book_id, value: book.id %>
-    <%# <%= f.hidden_field :user_id, value: @user.id %> 
+    <%= f.hidden_field :book_id, value: review.book_id %>
+    <%= f.hidden_field :user_id, value: session[:user_id] %>
     <p>
         <%= f.submit %>
     </p>

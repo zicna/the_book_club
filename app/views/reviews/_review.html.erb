@@ -1,11 +1,7 @@
-<div>
-    <p>
-        <%= review.book.title %>
-    </p>
-    <p>
-        <%= review.content %>
-    </p>
-    <p>
-        <%= review.mark %>
-    </p>
-</div>
+<%= content_tag :div, 'text' do %> 
+    <%= content_tag :p, review.book.title %>
+    <%= content_tag :p, review.content %>
+    <%= content_tag :p, review.mark %>
+     
+<% end %>
+
