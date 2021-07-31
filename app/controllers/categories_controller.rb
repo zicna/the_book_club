@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
     before_action :set_category, only: :new
     before_action :get_categories, only: :index
     before_action :get_books, only: :show
-    # before_action :remove_category_id_form_books, only: :destroy
+    
     
     def index
     end
@@ -40,7 +40,7 @@ class CategoriesController < ApplicationController
 
     def destroy
         @category.destroy
-        flash[:alert] = "category has been deleted!"
+        flash[:alert] = "Category has been deleted!"
         redirect_to categories_path
     end
 
