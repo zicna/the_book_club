@@ -1,17 +1,17 @@
-<%= form_for review do |f| %>
-    <p>
-        <%= f.label :content %>
-        <%= f.text_area :content %>
-    </p>
-    <p>
-        <%= f.label :mark %>
-        <%= f.number_field :mark %>
-    </p>
-    <%# @we wouldn't have acces to @user rather we will use 
-    sessins[:user_id]  %>
-    <%= f.hidden_field :book_id, value: review.book_id %>
-    <%= f.hidden_field :user_id, value: session[:user_id] %>
-    <p>
-        <%= f.submit %>
-    </p>
-<% end %>
+<div>Create new review:
+    <%= form_for review, url: reviews_path, method: :post do |r| %>
+        <%= r.hidden_field :book_id, value: book.id %>
+        <%= r.hidden_field :user_id, value: user.id %>
+        <div>
+            <%= r.label :content %>
+            <%= r.text_area :content %>
+        </div>
+        <div>
+            <%= r.label :mark %>
+            <%= r.number_field :mark %>
+        </div>
+        <div>
+            <%= r.submit "Create Review" %>
+        </div>
+    <% end %>
+</div>

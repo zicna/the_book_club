@@ -3,7 +3,10 @@
 <p>Book title: <%= @book.title %></p>
 <p>Book author: <%= link_to @book.author.full_name, author_path(@book.author) if @book.author%></p>
 <p>Category: <%= @book.category.name %></p>
-<%= link_to "Edit Book", edit_book_path(@book) if is_admin?%>
+<%= content_tag :div if is_admin? do %>
+    <%= link_to "Edit Book", edit_book_path(@book) %>
+    <%= link_to "Delete Book", book_path(@book), method: :delete%>
+<% end %>
 <%= link_to "All Reviews", book_reviews_path(@book.id)%>
 
 <hr>
@@ -19,28 +22,16 @@
         <p>mark:
             <%= review.mark %>
         </p> 
-        <%= link_to "(Edit)", edit_book_review_path(@book, review) if review.user == current_user%>
+       
     </div>
 <% end %>
 
 
 <hr>
 
-<div>
-    <%= form_for :review, url: reviews_path, method: :post do |r| %>
-        <%= r.hidden_field :book_id, value: @book.id %>
-        <%= r.hidden_field :user_id, value: session[:user_id] %>
-        <div>
-            <%= r.label :content %>
-            <%= r.text_area :content %>
-        </div>
-        <div>
-            <%= r.label :mark %>
-            <%= r.number_field :mark %>
-        </div>
-        <div>
-            <%= r.submit "Create Review" %>
-        </div>
-    <% end %>
-</div>
+<%= render partial: 'reviews/form', locals: {
+    review: Review.new,
+    book: @book,
+    user: current_user
+} %>
 
