@@ -1,7 +1,10 @@
 <h2>This is show page</h2>
-
+<%= link_to "(Back to all authors)", authors_path %>
 <%= render partial: 'author', locals: {author: @author} %>
-<%= content_tag :div if is_admin? do %>
-    <%= link_to "Edit author", edit_author_path(@author) %>
-    <%= link_to "Delete author", author_path(@author), method: :delete %>
+
+<% if is_admin? %>
+    <%= content_tag :div do %>
+        <%= link_to "Edit author", edit_author_path(@author) %>
+        <%= link_to "Delete author", author_path(@author), method: :delete %>
+    <% end %>
 <% end %>
