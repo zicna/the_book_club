@@ -47,9 +47,16 @@ class ReviewsController < ApplicationController
     end
 
     def destroy
-        @review.destroy
-        flash[:alert] = "review has been deleted!"
-        redirect_to reviews_path
+        if nested_route?
+            book = Book.find_by(id: params[:book_id])
+            @review.destroy
+            flash[:alert] = "review for #{book.title} book has been deleted!"
+            redirect_to book_reviews_path(book)
+        else
+            @review.destroy
+            flash[:alert] = "review for #{@book.title} has been deleted!"
+            redirect_to reviews_path
+        end
     end
 
     private

@@ -2,6 +2,11 @@
     <%= content_tag :p, review.book.title %>
     <%= content_tag :p, review.content %>
     <%= content_tag :p, review.mark %>
-     
+    <% if current_user == review.user %>
+        <%= content_tag :div, 'text'  do %>
+        <%= link_to '(Edit)', edit_book_review_path(review.book, review) %>
+        <%= link_to '(Delete)', book_review_path(review.book, review), method: :delete %>
+        <% end %>
+    <% end %>
 <% end %>
 
