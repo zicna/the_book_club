@@ -1,1 +1,7 @@
-<h2><%= @category.name%></h2>
+<h2><%= @category.name %></h2>
+<p><%= @category.description %></p>
+
+<h3>Check out books we have under <%= @category.name %> category: </h3>
+<% @books.each do |book| %>
+    <p><%= book.title %></p>
+<% end %>

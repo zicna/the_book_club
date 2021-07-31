@@ -13,6 +13,8 @@ class Book < ApplicationRecord
   accepts_nested_attributes_for :author, reject_if: ->(attributes){ attributes['first_name'].blank? }, allow_destroy: true
   accepts_nested_attributes_for :category, reject_if: ->(attributes){ attributes['name'].blank? }, allow_destroy: true
 
+  scope :get_books_by_category, -> (category) {where("category_id == ?", category)}
+
 def author_attributes=(hash)
   if hash[:first_name].present?
   @author = Author.find_or_create_by(
