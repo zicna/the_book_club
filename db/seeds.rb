@@ -242,9 +242,9 @@ books = [
 ]
 
 categories = [
-    {name: "Novel"},
-    {name: "Short story"},
-    {name: "Narrative poems"}
+    {name: "Novel", description: "A novel is a relatively long work of narrative fiction, typically written in prose and published as a book. A novel is a long, fictional narrative which describes intimate human experiences. The novel in the modern era usually makes use of a literary prose style. The development of the prose novel at this time was encouraged by innovations in printing, and the introduction of cheap paper in the 15th century."},
+    {name: "Short story", description: "A short story is a piece of prose fiction that typically can be read in one sitting and focuses on a self-contained incident or series of linked incidents, with the intent of evoking a single effect or mood. The short story is one of the oldest types of literature and has existed in the form of legends, mythic tales, folk tales, fairy tales, fables and anecdotes in various ancient communities across the world. The modern short story developed in the early 19th century."},
+    {name: "Narrative poem", description: "Narrative poetry tells stories through verse. Like a novel or a short story, a narrative poem has plot, characters, and setting. Using a range of poetic techniques such as rhyme and meter, narrative poetry presents a series of events, often including action and dialogue."}
 ]
 
 
@@ -254,7 +254,11 @@ categories = [
 
 
 categories.map do |category|
-    Category.find_or_create_by(name: category[:name])
+    Category.find_or_create_by(name: category[:name]) do |c| 
+        c.name = category[:name]
+        c.description = category[:description]
+        
+    end
 end
 
 
@@ -287,4 +291,4 @@ books.each do |book|
         )
         # p book_id
 end
-puts "data loaded success"
+puts "data loaded successfully"
