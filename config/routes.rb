@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "sessions#hello"
+  root "welcome#home"
   #users controller is responsible for login since we will be creating new user and that is interacting directly with User model
   get '/signup' => "users#new"
   post '/signup' => "users#create"
