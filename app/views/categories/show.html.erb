@@ -4,12 +4,9 @@
     <%= link_to 'All Categories |', categories_path %>
 <% end %>
 
-<% if is_admin? %>
-    <%= content_tag :div do %>
-        <%= link_to "Edit |", edit_category_path(@category) %>
-        <%= link_to "Delete |", category_path(@category), method: :delete %>
-    <% end %>
-<% end %>
+<%= edit_category_by_admin(@category) %>
+<%= delete_category_by_admin(@category) %>
+
 
 
 
