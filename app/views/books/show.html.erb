@@ -5,12 +5,11 @@
 <p>Book author: <%= link_to @book.author.full_name, author_path(@book.author) if @book.author %></p>
 <p>Category: <%= link_to @book.category.name, category_path(@book.category) if @book.category %></p>
 
-<% if is_admin?  %>
-    <%= content_tag :div do %>
-        <%= link_to "Edit Book", edit_book_path(@book) %>
-        <%= link_to "Delete Book", book_path(@book), method: :delete%>
-    <% end %>
-<% end %>
+
+<%= edit_by_admin(@book) %>
+<%= delete_by_admin(@book) %>
+
+
 <%= link_to "All Reviews for '#{@book.title}' book", book_reviews_path(@book.id)%>
 <hr>
 
@@ -18,9 +17,14 @@
 <%= render partial: "reviews/review", collection: @reviews %>
 <hr>
 
-<%= render partial: 'reviews/form', locals: {
-    review: Review.new,
-    book: @book,
-    user: current_user
-} %>
+
+<% if one_review_per_user_per_book(@book).empty? %>
+    <%= render partial: 'reviews/form', locals: {
+        review: Review.new,
+        book: @book,
+        user: current_user
+    } %>
+<% end %>
+
+
 
