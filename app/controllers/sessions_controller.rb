@@ -3,24 +3,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # byebug
-    @user = User.find_or_create_by(email: params[:user][:email]) do |u|
-      u.first_name = params[:user][:first_name],
-      u.last_name = params[:user][:last_name],
-      u.email = params[:user][:email],
-      u.password_digest = params[:user][:password],
-      u.birth_date = params[:user][:birth_date]
+    #if user is nil you can't call .authenticate on him
+    # #@user.authenticate(params[:user][:password]) returns false if password is incorect
+    ## returns object(@user in this case) if password is correct
+    @user = User.find_by(email: params[:user][:email])
+    if @user && @user.authenticate(params[:user][:password])
+      sign_me_in(@user)
+    else
+      sign_in_went_wrong
     end
-    # redirect_to "/" and return unless @user.authenticate(params[:user][:password])
-    # return head(:forbidden) unless @user.authenticate(params[:user][:password])
-    if !@user.authenticate(params[:user][:password])
-      flash.notice = "Credentials not valid, please try again."
-      redirect_to "/"
-      return
-    end
-
-    valid_user
-
   end
 
   def omniauth #log user with google
@@ -32,15 +23,19 @@ class SessionsController < ApplicationController
       u.uid = auth['uid']
       u.provider = auth['provider']
     end
+
+    if @user
+      sign_me_in(@user)
+    else
+      sign_in_went_wrong
+    end
     
-    valid_user
   end
 
   def destroy
     session.delete :user_id
     flash.notice = "You are sussesfully loged out!"
     redirect_to '/'
-
   end
 
   private
@@ -48,14 +43,17 @@ class SessionsController < ApplicationController
   def auth
     request.env['omniauth.auth']
   end
-  def valid_user
-    if @user.valid?
-      session[:user_id] = @user.id
-      flash[:notice] = "You are logged in."
-      redirect_to user_path(@user)
-    else
-      flash[:notice] = "Upps, something went wrong. Please check your credetials."
-      redirect_to "/"
-    end
+
+  def sign_me_in(user)
+    session[:user_id] = @user.id
+    flash.notice = "You are logged in as #{@user.full_name}."
+    redirect_to "/"
   end
+
+  def  sign_in_went_wrong
+    flash[:alert] = "Upps, something went wrong. Please check your credetials."
+    redirect_to "/"
+  end
+
+
 end
