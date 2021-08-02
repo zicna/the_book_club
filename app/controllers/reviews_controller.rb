@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
     before_action :get_review, only: [:show, :edit, :update, :create, :destroy]
     before_action :set_review, only: :new
     # before_action :get_reviews, only: :index
-    before_action :get_book, only: :edit
+    before_action :get_book, only: [:edit, :update]
     # before_action :get_reviews_from_nested_route, only: :index
     
     def index
@@ -33,10 +33,11 @@ class ReviewsController < ApplicationController
     end
 
     def edit
-        # byebug
+        
     end
 
     def update
+        # byebug
         @review.update(review_params)
         if @review.save
             redirect_to book_path(@review.book_id), notice: "The review was successfully updated"

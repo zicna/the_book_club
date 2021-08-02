@@ -1,5 +1,5 @@
 <div>Create new review:
-    <%= form_for review, url: reviews_path, method: :post do |r| %>
+    <%= form_for review do |r| %>
         <%= r.hidden_field :book_id, value: book.id %>
         <%= r.hidden_field :user_id, value: user.id %>
         <div>
@@ -11,7 +11,7 @@
             <%= r.number_field :mark %>
         </div>
         <div>
-            <%= r.submit "Create Review" %>
+            <%= r.submit  %>
         </div>
     <% end %>
 </div>
