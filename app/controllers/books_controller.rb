@@ -44,7 +44,7 @@ class BooksController < ApplicationController
 
     def destroy
         @book.destroy
-        flash[:alert] = "book has been deleted!"
+        flash[:alert] = "Book: '#{@book.title}' has been deleted!"
         redirect_to books_path
     end
 
