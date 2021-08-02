@@ -14,7 +14,9 @@ class UsersController < ApplicationController
     end
 
     def show
-        if current_user != @user
+        if current_user == @user || is_admin?
+            render :show
+        else
             flash.alert = "Acces denied"
             redirect_to "/"
         end

@@ -3,24 +3,24 @@ module UsersHelper
     # def edit_delete_by_admin
     #     if is_admin?
     #         content_tag :div do 
-    #             link_to "Delete Book", book_path(@book), method: :delete
-    #             link_to "Edit Book", edit_book_path(@book)
+    #             link_to "Delete user", user_path(@user), method: :delete
+    #             link_to "Edit user", edit_user_path(@user)
     #         end
     #     end
     # end
 
-    def edit_by_admin(book)
-        if is_admin?
+    def edit_by_admin(user)
+        if is_admin? || current_user == user
             content_tag :div do 
-                link_to "Edit Book", edit_book_path(book)
+                link_to "Edit User", edit_user_path(user)
             end
         end
     end
 
-    def delete_by_admin(book)
-        if is_admin?
+    def delete_by_admin(user)
+        if is_admin? || current_user == user
             content_tag :div do 
-                link_to "Delete Book", book_path(book), method: :delete
+                link_to "Delete User", user_path(user), method: :delete
             end
         end
     end
