@@ -1,28 +1,28 @@
 
-<div>
+<div class="mb-3">
     <%= form_for author do |f| %>
 
     <%= render partial: 'users/errors', locals: {user: author} if author.errors.any? %>
         <div>
-            <%= f.label :first_name %>
-            <%= f.text_field :first_name %>
+            <%= f.label :first_name, class:"form-label" %>
+            <%= f.text_field :first_name, class:"form-control " %>
         </div>
         <div>
-            <%= f.label :last_name %>
-            <%= f.text_field :last_name %>
+            <%= f.label :last_name, class:"form-label" %>
+            <%= f.text_field :last_name, class:"form-control" %>
         </div>
         
         <div>
-            <%= f.label :birth_date %>
-            <%= f.date_field :birth_date %>
+            <%= f.label :birth_date, class:"form-label" %>
+            <%= f.date_field :birth_date, class:"form-control" %>
         </div>
         <div>
-            <%= f.label :death_date %>
-            <%= f.date_field :death_date %>
+            <%= f.label :death_date, class:"form-label" %>
+            <%= f.date_field :death_date, class:"form-control"%>
         </div>
         <div>
-            <%= f.label :wiki_page %>
-            <%= f.text_field :wiki_page %>
+            <%= f.label :wiki_page, class:"form-label" %>
+            <%= f.text_field :wiki_page, class:"form-control"%>
         </div>
         <div>
             <%= f.submit %>
