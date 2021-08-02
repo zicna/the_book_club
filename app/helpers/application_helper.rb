@@ -11,9 +11,6 @@ module ApplicationHelper
         end
     end
 
-
-    
-
     def logged_in?
         session[:user_id].present? ? true : false
     end
