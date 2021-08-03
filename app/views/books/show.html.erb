@@ -20,7 +20,7 @@
 
 <% if one_review_per_user_per_book(@book).empty? %>
     <%= render partial: 'reviews/form', locals: {
-        review: Review.new,
+        review: @review,
         book: @book,
         user: current_user
     } %>

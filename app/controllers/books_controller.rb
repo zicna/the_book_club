@@ -5,12 +5,14 @@ class BooksController < ApplicationController
     before_action :get_authors, only: [:new, :edit]
     before_action :get_categries, only: [:new, :edit]
     before_action :get_book_reviews, only: :show
+    before_action :set_review, only: :show
     
     
     def index
     end
 
     def show
+        # byebug
     end
 
     def new
@@ -72,9 +74,9 @@ class BooksController < ApplicationController
         @categories = Category.all
     end
 
-    # def set_review
-    #     @review = Review.new
-    # end
+    def set_review
+        @review = Review.new(book_id: @book.id, user_id: current_user.id)
+    end
     
     def get_book_reviews
         @reviews = @book.reviews

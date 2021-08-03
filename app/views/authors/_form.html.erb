@@ -1,8 +1,8 @@
 
 <div class="mb-3">
+    <%= display_errors(author) %>
     <%= form_for author do |f| %>
 
-    <%= render partial: 'users/errors', locals: {user: author} if author.errors.any? %>
         <div>
             <%= f.label :first_name, class:"form-label" %>
             <%= f.text_field :first_name, class:"form-control " %>

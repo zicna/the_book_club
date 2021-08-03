@@ -1,9 +1,8 @@
 <h1>Book Form</h1>
 
 <div>
+    <%= display_errors(book) %>
     <%= form_for book do |f| %>
-
-    <%= render partial: 'users/errors', locals: {user: book} if book.errors.any?%>
         <div>
             <%= f.label :title %>
             <%= f.text_field :title %>

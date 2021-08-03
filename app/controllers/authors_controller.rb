@@ -3,7 +3,7 @@ class AuthorsController < ApplicationController
     before_action :get_author, only: [:show, :edit, :update, :create, :destroy]
     before_action :set_author, only: :new
     before_action :get_authors, only: :index
-    # before_action :remove_author_id_form_books, only: :destroy
+    
     
     def index
     end
@@ -12,9 +12,11 @@ class AuthorsController < ApplicationController
     end
 
     def new
+        
     end
 
     def create
+        # byebug
         @author = Author.new(author_params)
         if @author.save
             redirect_to author_path(@author), notice: "New author Created"
@@ -58,13 +60,6 @@ class AuthorsController < ApplicationController
     def get_authors
         @authors = Author.all
     end
-
-    # def remove_author_id_form_books
-    #     @books = Book.where("author_id = ?", @author.id)
-    #     @books.each do  |book|
-    #         book.author_id = nil
-    #     end
-    # end
     
     
 end

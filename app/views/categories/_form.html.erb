@@ -1,7 +1,6 @@
 <div>
+    <%= display_errors(category) %>
     <%= form_for category do |c| %>
-    <%= render partial: 'users/errors', locals: {user: category} if category.errors.any? %>
-
        <div>
             <%= c.label :name %>
             <%= c.text_field :name %>

@@ -1,0 +1,7 @@
+
+    <h5><%= pluralize(user.errors.count, "Error")%> prevented from saving in database.</h5>
+    <ul>
+        <% user.errors.full_messages.each do |messages| %>
+            <li><%= messages %></li>
+        <% end %>
+    </ul>
