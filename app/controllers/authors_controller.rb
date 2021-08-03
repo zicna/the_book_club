@@ -18,8 +18,9 @@ class AuthorsController < ApplicationController
     def create
         @author = Author.new(author_params)
         if @author.save
-            redirect_to author_path(@author), notice: "New author Created"
+            redirect_to author_path(@author), notice: "New author Created."
         else
+            flash[:alert] = "Author not created."
             render :new
         end
     end
@@ -30,8 +31,9 @@ class AuthorsController < ApplicationController
     def update
         @author.update(author_params)
         if @author.save
-            redirect_to author_path(@author), notice: "The author was successfully updated"
+            redirect_to author_path(@author), notice: "The author was successfully updated."
         else
+            flash[:alert] = "Author is not updated."
             render :edit
         end
 

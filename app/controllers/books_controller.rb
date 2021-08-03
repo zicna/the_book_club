@@ -24,6 +24,7 @@ class BooksController < ApplicationController
         if @book.save
             redirect_to book_path(@book), notice: "New book Created"
         else
+            flash[:alert] = "Book not Created"
             render :new
         end
     end
@@ -38,6 +39,7 @@ class BooksController < ApplicationController
         if @book.save
             redirect_to book_path(@book), notice: "The book was successfully updated"
         else
+            flash[:alert] = "Book is not updated."
             render :edit
         end
 

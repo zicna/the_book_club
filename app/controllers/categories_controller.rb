@@ -21,6 +21,7 @@ class CategoriesController < ApplicationController
         if @category.save
             redirect_to category_path(@category), notice: "New category Created"
         else
+            flash[:alert] = "Category not created."
             render :new
         end
     end
@@ -33,6 +34,7 @@ class CategoriesController < ApplicationController
         if @category.save
             redirect_to category_path(@category), notice: "The category was successfully updated"
         else
+            flash[:alert] = "The category is not updated."
             render :edit
         end
 

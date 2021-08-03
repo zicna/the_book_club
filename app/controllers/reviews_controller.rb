@@ -38,6 +38,7 @@ class ReviewsController < ApplicationController
         if @review.save
             redirect_to book_path(@review.book_id), notice: "The review was successfully updated"
         else
+            flash[:alert] = "The review is not updated."
             render :edit
         end
 
