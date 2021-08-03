@@ -16,7 +16,6 @@ class AuthorsController < ApplicationController
     end
 
     def create
-        # byebug
         @author = Author.new(author_params)
         if @author.save
             redirect_to author_path(@author), notice: "New author Created"

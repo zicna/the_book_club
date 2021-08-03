@@ -2,10 +2,8 @@ class ReviewsController < ApplicationController
    
     before_action :get_review, only: [:show, :edit, :update, :create, :destroy]
     before_action :set_review, only: :new
-    # before_action :get_reviews, only: :index
     before_action :get_book, only: [:edit, :update]
-    # before_action :get_reviews_from_nested_route, only: :index
-    
+
     def index
         if nested_route?
             @book = Book.find_by(id: params[:book_id])
@@ -22,7 +20,6 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        # byebug
         @book = Book.find_by(id: params[:review][:book_id])
         @review = Review.new(review_params)
         if @review.save
@@ -37,7 +34,6 @@ class ReviewsController < ApplicationController
     end
 
     def update
-        # byebug
         @review.update(review_params)
         if @review.save
             redirect_to book_path(@review.book_id), notice: "The review was successfully updated"

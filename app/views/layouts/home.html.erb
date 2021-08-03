@@ -11,16 +11,22 @@
   </head>
 
   <body>
-    <div class="flash-message">
+    <h1>The Book Club</h1>
+    <hr>
+    <%= button_to "Log in with google", "/auth/google_oauth2" %>
+    <%= button_to "Log in", '/login', method: "get" %>
+    <%= button_to "Sign up", '/signup', method: "get" %>
+    <hr>
+    <div>
       <% flash.each do |type, msg| %>
-        <%= content_tag :div, msg, class: type%>
+        <% if type== "alert" %>
+          <%= content_tag :div, msg, class:"alert alert-danger"%>
+          <% else %>
+          <%= content_tag :div, msg, class:"alert alert-success"%>
+        <% end %>
       <% end %>
     </div>
-    <%= button_to "Log in with google", "/auth/google_oauth2" %>
-     <%= button_to "Log in", '/login', method: "get"%>
-    <%= button_to "Sign up", '/signup', method: "get" %>
-   
-  <hr>
+    <hr>
     <%= yield %>
   </body>
 </html>

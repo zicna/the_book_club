@@ -14,12 +14,18 @@
   <h1>The Book Club</h1>
     <div><%= render partial: 'layouts/nav_bar' %></div>
     <hr>
-    <div class="flash-message">
+    <div>
       <% flash.each do |type, msg| %>
-        <%= content_tag :div, msg, class: type%>
+        <% if type== "alert" %>
+          <%= content_tag :div, msg, class:"alert alert-danger"%>
+          <% else %>
+          <%= content_tag :div, msg, class:"alert alert-success"%>
+        <% end %>
       <% end %>
     </div>
     <hr>
-    <%= yield %>
+    <div >
+      <%= yield %>
+    </div>
   </body>
 </html>
