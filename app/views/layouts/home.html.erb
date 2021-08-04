@@ -13,10 +13,11 @@
   <body>
     <h1>The Book Club</h1>
     <hr>
-    <%= button_to "Log in with google", "/auth/google_oauth2" %>
-    <%= button_to "Log in", '/login', method: "get" %>
-    <%= button_to "Sign up", '/signup', method: "get" %>
-    <hr>
+    <nav class="nav">
+      <%= button_to "Log in with google", "/auth/google_oauth2", class:"nav-link" %>
+      <%= button_to "Log in", '/login', method: "get", class:"nav-link" %>
+      <%= button_to "Sign up", '/signup', method: "get", class:"nav-link" %>
+    </nav>
     <div>
       <% flash.each do |type, msg| %>
         <% if type== "alert" %>
