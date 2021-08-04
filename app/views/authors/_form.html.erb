@@ -1,5 +1,5 @@
 
-<div class="mb-3">
+<div class="mb-3 container">
     <%= display_errors(author) %>
     <%= form_for author do |f| %>
 
@@ -19,6 +19,10 @@
         <div>
             <%= f.label :death_date, class:"form-label" %>
             <%= f.date_field :death_date, class:"form-control"%>
+        </div>
+        <div>
+            <%= f.label :image, class:"form-label" %>
+            <%= f.text_field :image, class:"form-control"%>
         </div>
         <div>
             <%= f.label :wiki_page, class:"form-label" %>
