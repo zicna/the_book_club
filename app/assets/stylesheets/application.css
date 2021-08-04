@@ -30,6 +30,11 @@ body {
    
 } */
 
-* a {
+a {
    text-decoration: none;
+   color: black;
 }
+/* a :hover {
+   background-color: lightgray;
+
+} */
