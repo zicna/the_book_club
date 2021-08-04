@@ -1,5 +1,6 @@
 <%= link_to author_path(author) do %>
-    <p>
-        <%= author.full_name%>
+    <p class="list-group-item ">
+        <%= image_tag author.image, width: '100px', height: '100px' %>
+        <%= author.full_name %>
     </p>
 <% end %>

@@ -18,7 +18,7 @@ authors = [
     {
         first_name: "Fyodor",
         last_name: "Dostojevski",
-        image: "https://commons.wikimedia.org/wiki/File:Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg#/media/File:Vasily_Perov_-_Портрет_Ф.М.Достоевского_-_Google_Art_Project.jpg",
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg/440px-Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg', 
         birth_date: "11-11-1821",
         death_date: "9-2-1881",
         wiki_page: "https://en.wikipedia.org/wiki/Fyodor_Dostoevsky"
@@ -26,7 +26,7 @@ authors = [
     {
         first_name: "Anton",
         last_name: "Chekhov",
-        image: "https://commons.wikimedia.org/wiki/File:Anton_Chekhov_1889.jpg#/media/File:Anton_Chekhov_1889.jpg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/9/93/Anton_Chekhov_1889.jpg",
         birth_date: "29-1-1860",
         death_date: "15-7-1904",
         wiki_page: "https://en.wikipedia.org/wiki/Anton_Chekhov"
@@ -34,7 +34,7 @@ authors = [
     {
         first_name: "Alexander",
         last_name: "Pushkin",
-        image: "https://commons.wikimedia.org/wiki/File:Kiprensky_Pushkin.jpg#/media/File:Kiprensky_Pushkin.jpg",
+        image: "http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcS1WXwIHuugPi3XCCEc-lppk5YSfvffhh8RNh4WN0WylfWPUmaBmvdHmWTyuVuv",
         birth_date: "29-5-1799",
         death_date: "29-1-1837",
         wiki_page: "https://en.wikipedia.org/wiki/Alexander_Pushkin"
@@ -42,7 +42,7 @@ authors = [
     {
         first_name: "Leo" ,
         last_name: "Tolstoy",
-        image: "https://commons.wikimedia.org/wiki/File:L.N.Tolstoy_Prokudin-Gorsky.jpg#/media/File:L.N.Tolstoy_Prokudin-Gorsky.jpg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/L.N.Tolstoy_Prokudin-Gorsky.jpg/1200px-L.N.Tolstoy_Prokudin-Gorsky.jpg",
         birth_date: "9-9-1828",
         death_date: "20-11-1910",
         wiki_page: "https://en.wikipedia.org/wiki/Leo_Tolstoy"
