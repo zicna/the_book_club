@@ -3,6 +3,7 @@ class AuthorsController < ApplicationController
     before_action :get_author, only: [:show, :edit, :update, :create, :destroy]
     before_action :set_author, only: :new
     before_action :get_authors, only: :index
+    before_action :get_books_by_author, only: :show
     
     
     def index
@@ -60,6 +61,10 @@ class AuthorsController < ApplicationController
 
     def get_authors
         @authors = Author.all
+    end
+
+    def get_books_by_author
+        @books = Book.get_books_by_author(@author)
     end
     
     

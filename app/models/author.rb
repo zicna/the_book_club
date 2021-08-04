@@ -12,4 +12,11 @@ class Author < ApplicationRecord
         "#{self.first_name} #{self.last_name}"
     end
 
+    def format_birth_date
+        self.birth_date.strftime("%B %d, %Y")
+    end
+    def format_death_date
+       self.death_date.strftime("%B %d, %Y")
+    end
+
 end
