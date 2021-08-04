@@ -1,6 +1,7 @@
 module ApplicationHelper
     def display_errors(konj)
         if  konj.errors.any?
+            
             render partial: "shared/errors",
                 locals: {
                     user: konj

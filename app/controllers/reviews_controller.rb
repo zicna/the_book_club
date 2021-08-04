@@ -24,12 +24,17 @@ class ReviewsController < ApplicationController
     end
 
     def create
+        # byebug
         @book = Book.find_by(id: params[:review][:book_id])
+        # get_book_from_nested_route
         @review = Review.new(review_params)
         if @review.save
-            redirect_to book_path(@book), notice: "New review Created"
+            redirect_to book_path(@book), notice: "New review for #{@book.title} has been created."
         else
-            redirect_to book_path(@book), alert: "Review not created"
+            # byebug
+            # render :new, alert: "Review not created"
+            flash[:alert] = "New review for #{@book.title} has not been created."
+            redirect_to new_book_review_path(@book)
         end
     end
 
