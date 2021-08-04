@@ -1,21 +1,20 @@
-<div>
+<div class="container">
     <%= form_tag({
         controller: "sessions",
         action: "create",
         method: "post"
     }) do %>
     
-    <div>
+    <div class="mb-3">
         <%= label_tag "user[email]", "Email:" %>
-        <%= text_field_tag "user[email]" %>
+        <%= email_field_tag "user[email]" %>
     </div>
     
-    <div>
+    <div class="mb-3">
         <%= label_tag "user[password]", "Password:" %>
         <%= password_field_tag "user[password]" %>
     </div>
     
-    <%= submit_tag "Sign In"%>
+    <%= submit_tag "Sign In", class:"btn btn-success" %>
     <% end %>
 </div>
-
