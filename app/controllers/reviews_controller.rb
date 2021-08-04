@@ -17,6 +17,10 @@ class ReviewsController < ApplicationController
     end
 
     def new
+        if nested_route?
+            get_book_from_nested_route
+        end
+    
     end
 
     def create
@@ -46,10 +50,10 @@ class ReviewsController < ApplicationController
 
     def destroy
         if nested_route?
-            book = Book.find_by(id: params[:book_id])
+            get_book_from_nested_route
             @review.destroy
-            flash[:alert] = "review for #{book.title} book has been deleted!"
-            redirect_to book_reviews_path(book)
+            flash[:alert] = "review for #{@book.title} book, by #{current_user.full_name} has been deleted!"
+            redirect_to book_path(@book)
         else
             @review.destroy
             flash[:alert] = "review for #{@book.title} has been deleted!"
@@ -82,11 +86,9 @@ class ReviewsController < ApplicationController
         params[:book_id] ? true : false
     end
     
-    # def get_book_from_nested_route
-    #     if params[:book_id].present? && @book = Book.find_by(id: params[:book_id])
-    #         @book
-    #     end
-    # end
+    def get_book_from_nested_route
+        @book = Book.find_by(id: params[:book_id])
+    end
 
     # def get_reviews_from_nested_route
     #     @book_reviews = get_book_from_nested_route.reviews

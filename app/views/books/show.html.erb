@@ -10,20 +10,18 @@
 <%= delete_book_by_admin(@book) %>
 
 
-<%= link_to "All Reviews for '#{@book.title}' book", book_reviews_path(@book.id)%>
+<%= link_to "All Reviews for '#{@book.title}' book", book_reviews_path(@book.id) if !@book.reviews.empty?%>
 <hr>
 
 <h4>Reviews:</h4>
-<%= render partial: "reviews/review", collection: @reviews %>
+
+<%= render(:partial => 'reviews/review', :collection => @reviews) || "You have no reviews for #{@book.title} book. Be first to leave review. Link bellow." %>
+
 <hr>
 
 
 <% if one_review_per_user_per_book(@book).empty? %>
-    <%= render partial: 'reviews/form', locals: {
-        review: @review,
-        book: @book,
-        user: current_user
-    } %>
+    <%= link_to "Create new review", new_book_review_path(@book)%>
 <% end %>
 
 
