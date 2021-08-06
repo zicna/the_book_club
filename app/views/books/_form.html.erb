@@ -1,6 +1,7 @@
 
 <%= display_errors(book) %>
 <%= form_for book do |f| %>
+    <%= f.hidden_field :created_by, value: current_user.id%>
     
     <div class="mb-3">
         <%= f.label :title, class:"form-label" %>

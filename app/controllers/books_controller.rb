@@ -12,6 +12,7 @@ class BooksController < ApplicationController
     end
 
     def show
+        # byebug
     end
 
     def new
@@ -55,7 +56,7 @@ class BooksController < ApplicationController
 
     private
     def book_params
-        params.require(:book).permit(:author_id, :category_id, :title, :invt, :description, :price, :wiki_page, :category_attributes => [:name], :author_attributes => [:first_name, :last_name, :image, :birth_date, :death_date, :wiki_page])
+        params.require(:book).permit(:author_id, :category_id, :title, :invt, :description, :price, :wiki_page, :created_by, :category_attributes => [:name], :author_attributes => [:first_name, :last_name, :image, :birth_date, :death_date, :wiki_page])
     end
 
     def get_book

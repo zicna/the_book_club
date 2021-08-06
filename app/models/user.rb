@@ -29,4 +29,5 @@ class User < ApplicationRecord
     def format_date
         self.birth_date.strftime("%B %d, %Y")
     end
+
 end

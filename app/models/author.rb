@@ -16,7 +16,8 @@ class Author < ApplicationRecord
         self.birth_date.strftime("%B %d, %Y")
     end
     def format_death_date
-       self.death_date.strftime("%B %d, %Y")
+        
+        self.death_date ? self.death_date.strftime("%B %d, %Y") : nil
     end
 
 end

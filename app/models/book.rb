@@ -16,6 +16,8 @@ class Book < ApplicationRecord
   scope :get_books_by_category, -> (category) {where("category_id == ?", category.id)}
   scope :get_books_by_author, -> (author) {where("author_id == ?", author.id)}
 
+  scope :added_by, -> (user) {where("created_by == ?", user.id)}
+
 def author_attributes=(hash)
   if hash[:first_name].present?
   @author = Author.find_or_create_by(

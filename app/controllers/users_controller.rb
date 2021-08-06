@@ -73,4 +73,8 @@ class UsersController < ApplicationController
     def get_users
         @users = User.all
     end
+
+    # def get_books_added_by(user)
+    #     Book.added_by(user)
+    # end
 end

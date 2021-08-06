@@ -20,4 +20,8 @@ module UsersHelper
                 link_to "Delete User", user_path(user), method: :delete
         end
     end
+
+    def books_added(user)
+        Book.added_by(user)
+    end
 end
