@@ -41,7 +41,14 @@ a {
 
 /* addin margin for buttons to separate them */
 .btn {
-   margin: 1rem;
+   margin: 10px;
+   padding: 10px;
+}
+
+.btn-success {
+   display: block;
+   margin: auto;
+   width: 33%;
 }
 /* adding style for filds_with_errors */
 .field_with_errors {
@@ -72,15 +79,26 @@ a {
 .form-container {
    margin: 10px;
    padding: 10px;
-   width: 50vw;
    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
    display: block;
    text-align: center;
 }
 
-.form-signin {
+.form-container > form {
+   width: 50vw;
    display: inline;
    margin-left: auto;
    margin-right: auto;
    text-align: left;
+}
+
+/* adding style for login form */
+.login-form {
+   width: 50vw;
+   text-align: center;
+   /* display: inline;
+   margin: auto; */
+}
+.mb-3 {
+   text-align: center;
 }

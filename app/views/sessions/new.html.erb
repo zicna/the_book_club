@@ -1,4 +1,4 @@
-<div>
+<div class="form-container login-form">
     <%= form_tag({
         controller: "sessions",
         action: "create",
@@ -8,9 +8,6 @@
     <div class="mb-3">
         <%= label_tag "user[email]", "Email:" %>
         <%= email_field_tag "user[email]" %>
-    </div>
-    
-    <div class="mb-3">
         <%= label_tag "user[password]", "Password:" %>
         <%= password_field_tag "user[password]" %>
     </div>
