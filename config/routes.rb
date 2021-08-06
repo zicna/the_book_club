@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   #our post (response) will be handled by middleware
   #middleware is expectiong this route
 
-  resources :reviews
+  # resources :reviews
   resources :users
 
   resources :authors
