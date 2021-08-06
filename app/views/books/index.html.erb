@@ -15,6 +15,6 @@
         </tr>
         <% end %>
     </table>
-    <div class="btn btn-success"><%= link_to "Create New Book", new_book_path if is_admin? %></div>
+    <%= link_to "Create New Book", new_book_path, class:"btn btn-success" if is_admin? %>
 </div>
 

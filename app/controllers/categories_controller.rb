@@ -64,11 +64,7 @@ class CategoriesController < ApplicationController
     end
 
     def get_books
-        @books = Book.get_books_by_category(@category.id)
+        @books = Book.get_books_by_category(@category)
     end
-    
-   
-    
-    
     
 end
