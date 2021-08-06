@@ -1,28 +1,40 @@
-<h1>this is book show page</h1>
 
-<%= link_to "Back to all Books", books_path %>
-<p>Book title: <%= @book.title %></p>
-<p>Book author: <%= link_to @book.author.full_name, author_path(@book.author) if @book.author %></p>
-<p>Category: <%= link_to @book.category.name, category_path(@book.category) if @book.category %></p>
+<div class="container">
+    
+    <h3><%= @book.title %></h3>
+    <h5>by: <%= link_to @book.author.full_name, author_path(@book.author) if @book.author %></h5>
+    <p>Category: <%= link_to @book.category.name, category_path(@book.category) if @book.category %></p>
+    <hr>
+    <p> <strong>Description:</strong>
+        <%= @book.description %>
+    </p>
+    <% if @book.wiki_page.present?%>
+        <p>Read more about this book <%= link_to "here.", "#{@book.wiki_page}", target: "_blank" %></p>
+    <% end %>
+    
+    
+    <%= edit_book_by_admin(@book) %>
+    <%= delete_book_by_admin(@book) %>
+    
+    
+    <%= link_to "All Reviews for '#{@book.title}' book", book_reviews_path(@book.id) if !@book.reviews.empty?%>
+    <hr>
+    
+    <h4>Reviews:</h4>
+    
+    <%= render(:partial => 'reviews/review', :collection => @reviews) || "You have no reviews for #{@book.title} book. Be first to leave review. Link bellow." %>
+    
+    <hr>
+    
+    
+    <% if one_review_per_user_per_book(@book).empty? %>
+        <%= link_to "Create new review", new_book_review_path(@book)%>
+    <% end %>
+    <div>
+        <%= link_to "Back to all Books", books_path %>
+    </div>
+</div>
 
-
-<%= edit_book_by_admin(@book) %>
-<%= delete_book_by_admin(@book) %>
-
-
-<%= link_to "All Reviews for '#{@book.title}' book", book_reviews_path(@book.id) if !@book.reviews.empty?%>
-<hr>
-
-<h4>Reviews:</h4>
-
-<%= render(:partial => 'reviews/review', :collection => @reviews) || "You have no reviews for #{@book.title} book. Be first to leave review. Link bellow." %>
-
-<hr>
-
-
-<% if one_review_per_user_per_book(@book).empty? %>
-    <%= link_to "Create new review", new_book_review_path(@book)%>
-<% end %>
 
 
 
