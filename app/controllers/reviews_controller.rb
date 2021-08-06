@@ -34,6 +34,7 @@ class ReviewsController < ApplicationController
             # byebug
             # render :new, alert: "Review not created"
             flash[:alert] = "New review for #{@book.title} has not been created."
+            # helped by Candice form_for can get only one agrument that is why we pass it in as array
             render :new
         end
     end
