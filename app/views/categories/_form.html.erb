@@ -1,5 +1,6 @@
 <%= display_errors(category) %>
 <%= form_for category do |c| %>
+    <%= c.hidden_field :created_by, value: current_user.id %>
    <div class="mb-3">
         <%= c.label :name, class:"form-label" %>
         <%= c.text_field :name, class:"form-control " %>

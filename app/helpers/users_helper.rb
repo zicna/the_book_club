@@ -20,4 +20,8 @@ module UsersHelper
         Review.avg_review_mark_by_user(user)
     end
 
+    def categories_added(user)
+        Category.category_added_by_user(user)
+    end
+
 end
