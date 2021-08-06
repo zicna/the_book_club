@@ -1,5 +1,6 @@
 <div>Create new review:
     <%= display_errors(review) %>
+   
     <%= form_for ([book, review]) do |r| %>
         <%= r.hidden_field :book_id, value: book.id %>
         <%= r.hidden_field :user_id, value: user.id %>

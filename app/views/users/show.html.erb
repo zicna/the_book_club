@@ -1,13 +1,16 @@
 <div>
     <%= render partial: 'user', locals: {user: @user} %>
 
-    <div>Totals for <%= current_user.full_name %>:  
+    <div>Totals for <%= @user.full_name %>:  
         <p>Reviews:
             <%= Review.reviews_by_user(@user).count %>
         </p>
-        Books: 
-      
+        <p>
+            Books added:
+        </p> 
+        <p>
+            Categories added:
+        </p>
     </div>
-    
 </div>
 
