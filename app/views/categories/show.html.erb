@@ -1,16 +1,15 @@
-<h2><%= @category.name %></h2>
-<p><%= @category.description %></p>
-<%= content_tag :div do %>
-    <%= link_to 'All Categories |', categories_path %>
-<% end %>
-
-<%= edit_category_by_admin(@category) %>
-<%= delete_category_by_admin(@category) %>
-
-
-
-
-<h3>Check out books we have under <%= @category.name %> category: </h3>
-<% @books.each do |book| %>
-    <p><%= link_to book.title, book_path(book) %></p>
-<% end %>
+<div class="container">
+    <h2><%= @category.name %></h2>
+    <p><%= @category.description %></p>
+    
+    
+    <%= edit_category_by_admin(@category) %>
+    <%= delete_category_by_admin(@category) %>
+    
+    <div class="container">
+        <h3>Check out books we have under <%= @category.name %> category: </h3>
+        <% @books.each do |book| %>
+            <p><%= link_to book.title, book_path(book) %> by <%= link_to book.author.full_name, author_path(book.author) if book.author%></p>
+        <% end %>
+    </div>
+</div>
