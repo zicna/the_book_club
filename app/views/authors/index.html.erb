@@ -1,4 +1,5 @@
-<%= link_to "Create new Author", new_author_path if is_admin? %>
 <ul class="list-group">
     <%= render partial: "author", collection: @authors %>
 </ul>
+<%= link_to "Create new Author", new_author_path, class:"btn btn-success" if is_admin? %>
+
