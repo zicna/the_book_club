@@ -29,5 +29,9 @@ class User < ApplicationRecord
     def format_date
         self.birth_date.strftime("%B %d, %Y")
     end
+    
+    def member_since
+        self.created_at.strftime("%B %d, %Y")
+    end
 
 end

@@ -12,9 +12,11 @@ class Review < ApplicationRecord
     :less_than_or_equal_to => 10
 }
 
-scope :reviews_by_user, ->(user) {where("user_id == ?", user.id)}
+scope :avg_review_mark_by_user, -> (user) {where("user_id == ?", user.id).average("mark")}
 
   def date_of_review
     self.created_at.strftime("%B %d, %Y")
   end
+
+
 end

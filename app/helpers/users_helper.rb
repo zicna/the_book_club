@@ -1,13 +1,4 @@
 module UsersHelper
-    #how to get this helper to pu out both link_to in views???
-    # def edit_delete_by_admin
-    #     if is_admin?
-    #         content_tag :div do 
-    #             link_to "Delete user", user_path(@user), method: :delete
-    #             link_to "Edit user", edit_user_path(@user)
-    #         end
-    #     end
-    # end
 
     def edit_by_admin(user)
         if is_admin? || current_user == user
@@ -24,4 +15,9 @@ module UsersHelper
     def books_added(user)
         Book.added_by(user)
     end
+
+    def avg_review_mark(user)
+        Review.avg_review_mark_by_user(user)
+    end
+
 end

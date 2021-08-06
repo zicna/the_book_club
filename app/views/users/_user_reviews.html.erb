@@ -1,0 +1,22 @@
+<div class="show-user-totals">
+        <h5>Totals for <%= user.full_name %>:</h5>  
+        <table class="table table-light table-striped table table-hover"> 
+            <tr     class="table-dark">
+                <th>Book reviewed</th>
+                <th>Category</th>
+                <th>Created at</th>
+                <th>Mark</th>
+            </tr>
+            <% user.reviews.each do |review| %>
+                <tr>
+                    <td> <%= review.book.title %> by <%= review.book.author.full_name%></td>
+                    <td> <%= review.book.category.name %></td>
+                    <td> <%= review.date_of_review %></td>
+                    <td> <%= review.mark %></td>
+                </tr>
+            <% end %>
+        </table>
+        <p>Total reviews created:
+           <b><%= user.reviews.count %></b> with average mark of <b><%= avg_review_mark(user) %></b>
+        </p>
+    </div>
