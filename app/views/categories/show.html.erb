@@ -3,8 +3,10 @@
     <p><%= @category.description %></p>
     
     
-    <%= edit_category_by_admin(@category) %>
-    <%= delete_category_by_admin(@category) %>
+   <div>
+        <%= edit_category_by_admin(@category) %>    |
+        <%= delete_category_by_admin(@category) %>
+   </div>
     
     <div>
         <h3>Check out books we have under <%= @category.name %> category: </h3>

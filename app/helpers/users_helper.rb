@@ -11,17 +11,13 @@ module UsersHelper
 
     def edit_by_admin(user)
         if is_admin? || current_user == user
-            content_tag :div do 
                 link_to "Edit User", edit_user_path(user)
-            end
         end
     end
 
     def delete_by_admin(user)
         if is_admin? || current_user == user
-            content_tag :div do 
                 link_to "Delete User", user_path(user), method: :delete
-            end
         end
     end
 end

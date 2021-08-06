@@ -3,7 +3,9 @@
     <p>Email: <b><%= user.email %></b></p>
     <p>Date of birth: <b><%= user.format_date if user.birth_date %></b></p>
 
-    <%= link_to "Edit", edit_user_path(user) %> |
-    <%= link_to "Delete", user_path(user), method: :delete %>
+    <div>
+        <%= link_to "Edit", edit_user_path(user) %> |
+        <%= link_to "Delete", user_path(user), method: :delete %>
+    </div>
 
 <% end %>
