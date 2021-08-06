@@ -1,6 +1,4 @@
-
-<div class="container">
-    
+<div>
     <h3><%= @book.title %></h3>
     <h5>by: <%= link_to @book.author.full_name, author_path(@book.author) if @book.author %></h5>
     <p>Category: <%= link_to @book.category.name, category_path(@book.category) if @book.category %></p>

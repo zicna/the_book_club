@@ -11,8 +11,11 @@
   </head>
 
   <body>
-  <h1>The Book Club</h1>
-    <div><%= render partial: 'layouts/nav_bar' %></div>
+  <div class="container">
+    <h1>The Book Club</h1>
+    <div>
+      <%= render partial: 'layouts/nav_bar' %>
+    </div>
     <hr>
     <div>
       <% flash.each do |type, msg| %>
@@ -27,5 +30,6 @@
     <div class="container">
       <%= yield %>
     </div>
+  </div>
   </body>
 </html>

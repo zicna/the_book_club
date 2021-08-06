@@ -6,7 +6,7 @@
     <%= edit_category_by_admin(@category) %>
     <%= delete_category_by_admin(@category) %>
     
-    <div class="container">
+    <div>
         <h3>Check out books we have under <%= @category.name %> category: </h3>
         <% @books.each do |book| %>
             <p><%= link_to book.title, book_path(book) %> by <%= link_to book.author.full_name, author_path(book.author) if book.author%></p>

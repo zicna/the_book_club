@@ -1,24 +1,23 @@
 
-<div class="container">
-    <%= render partial: 'author', locals: {author: @author} %>
-      (<%= @author.format_birth_date %> - <%= @author.format_death_date %>)
-    <div>
-        <%= edit_author_by_admin(@author) %> |
-        <%= delete_author_by_admin(@author) %>
-    </div>
-    <p>
-        Read more about this author <%= link_to "here.", "#{@author.wiki_page}", target: "_blank" %>
-    </p>
-   
-    <div>
-        <p>Books by <%= @author.full_name %> you can find on our app:</p>
-            <% @books.each do |book| %>
-                <p>
-                    <%= link_to book.title, book_path(book) %>
-                </p>
-            
-            <% end %>
-        </div>
+<%= render partial: 'author', locals: {author: @author} %>
+  (<%= @author.format_birth_date %> - <%= @author.format_death_date %>)
+<div>
+    <%= edit_author_by_admin(@author) %> |
+    <%= delete_author_by_admin(@author) %>
+</div>
+<p>
+    Read more about this author <%= link_to "here.", "#{@author.wiki_page}", target: "_blank" %>
+</p>
 
-</div>    
+<div>
+    <p>Books by <%= @author.full_name %> you can find on our app:</p>
+        <% @books.each do |book| %>
+            <p>
+                <%= link_to book.title, book_path(book) %>
+            </p>
+        
+        <% end %>
+    </div>
+
+   
  

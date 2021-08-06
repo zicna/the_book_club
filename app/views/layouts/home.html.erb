@@ -11,23 +11,27 @@
   </head>
 
   <body>
-    <h1>The Book Club</h1>
-    <hr>
-    <nav class="nav">
-      <%= button_to "Log in with google", "/auth/google_oauth2", class:"nav-link" %>
-      <%= button_to "Log in", '/login', method: "get", class:"nav-link" %>
-      <%= button_to "Sign up", '/signup', method: "get", class:"nav-link" %>
-    </nav>
-    <div>
-      <% flash.each do |type, msg| %>
-        <% if type== "alert" %>
-          <%= content_tag :div, msg, class:"alert alert-danger"%>
-          <% else %>
-          <%= content_tag :div, msg, class:"alert alert-success"%>
+    <div class="container">
+      <h1>The Book Club</h1>
+      <hr>
+      <nav class="nav">
+        <%= button_to "Log in with google", "/auth/google_oauth2", class:"nav-link" %>
+        <%= button_to "Log in", '/login', method: "get", class:"nav-link" %>
+        <%= button_to "Sign up", '/signup', method: "get", class:"nav-link" %>
+      </nav>
+      <div>
+        <% flash.each do |type, msg| %>
+          <% if type== "alert" %>
+            <%= content_tag :div, msg, class:"alert alert-danger"%>
+            <% else %>
+            <%= content_tag :div, msg, class:"alert alert-success"%>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+      <hr>
+     <div class="container"> 
+      <%= yield %>
     </div>
-    <hr>
-    <%= yield %>
+    </div>
   </body>
 </html>
