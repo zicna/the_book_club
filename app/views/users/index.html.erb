@@ -1,6 +1,8 @@
 
-<%= render partial: "user", collection: @users %>
-<hr>
-<div>
-    <%= link_to "Create New User", new_user_path, class:"btn btn-success" %>
+<div class="container">
+    <%= render partial: "user", collection: @users %>
+    <hr>
+    <div>
+        <%= link_to "Create New User", new_user_path, class:"btn btn-success" %>
+    </div>
 </div>

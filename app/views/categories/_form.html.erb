@@ -1,14 +1,12 @@
-<div>
-    <%= display_errors(category) %>
-    <%= form_for category do |c| %>
-       <div>
-            <%= c.label :name %>
-            <%= c.text_field :name %>
-       </div>
-        <div>
-            <%= c.label :description %>
-            <%= c.text_area :description %>
-        </div>
-        <div><%= c.submit class:"btn btn-success" %></div>
-    <% end %>
-</div>
+<%= display_errors(category) %>
+<%= form_for category do |c| %>
+   <div class="mb-3">
+        <%= c.label :name, class:"form-label" %>
+        <%= c.text_field :name, class:"form-control " %>
+   </div>
+    <div class="mb-3">
+        <%= c.label :description, class:"form-label" %>
+        <%= c.text_area :description, class:"form-control " %>
+    </div>
+    <div class="mb-3"><%= c.submit class:"btn btn-success" %></div>
+<% end %>

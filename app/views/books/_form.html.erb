@@ -1,52 +1,53 @@
-<h1>Book Form</h1>
 
-<div>
-    <%= display_errors(book) %>
-    <%= form_for book do |f| %>
-        <div>
-            <%= f.label :title %>
-            <%= f.text_field :title %>
-        </div>
-        <div>
-            <%= f.label :description %>
-            <%= f.text_area :description %>
-        </div>
-        <div>
-            <%= f.label :wiki_page %>
-            <%= f.text_field :wiki_page %>
-        </div>
-        <div>
-            <%= f.label :price %>
-            <%= f.number_field :price, step: 0.1 %>
-        </div>
-        <div>
-            <%= f.label :invt %>
-            <%= f.text_field :invt %>
-        </div>
-        <hr>
+<%= display_errors(book) %>
+<%= form_for book do |f| %>
+    
+    <div class="mb-3">
+        <%= f.label :title, class:"form-label" %>
+        <%= f.text_field :title, class:"form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= f.label :description, class:"form-label" %>
+        <%= f.text_area :description, class:"form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= f.label :wiki_page, class:"form-label" %>
+        <%= f.text_field :wiki_page, class:"form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= f.label :price, class:"form-label" %>
+        <%= f.number_field :price, step: 0.1, class:"form-control" %>
+    </div>
+    <div class="mb-3">
+        <%= f.label :invt, class:"form-label" %>
+        <%= f.text_field :invt, class:"form-control" %>
+    </div>
+    <hr>
+    
+    <div >
         <p> Choose from existing authors:</p>
-        <div>
-            <%= f.collection_select( :author_id, authors, :id, :full_name) if authors %>
-        </div>
-        
-        <%# Place for refactor %>
+        <%= f.collection_select( :author_id, authors, :id, :full_name, {:include_blank => "Choose author"}) if authors  %>
+    </div>
+    
+    <%# Place for refactor %>
+    <div >
         <p>Or Create New Author:</p>
         <%= f.fields_for :author do |author| %>
             <%= render partial: 'form_author', locals: {author: author} %>
         <% end %>
-        <hr>
-        <p> Choose from existing categories:</p>
-        <div>
-            <%= f.collection_select( :category_id, categories, :id, :name) if categories %>
-        </div>
-        <p>Or Create New Category:</p>
-        <%= f.fields_for :category do |category| %>
-            <%= category.label :name, "Category name:" %>
-            <%= category.text_field :name %>
-        <% end %>
-        <hr>
-        <div>
-            <%= f.submit class:"btn btn-success" %>
-        </div>
+    </div>
+    <hr>
+    <p> Choose from existing categories:</p>
+    <div>
+        <%= f.collection_select( :category_id, categories, :id, :name, {:include_blank => "Choose category"}) if categories %>
+    </div>
+    <p>Or Create New Category:</p>
+    <%= f.fields_for :category do |category| %>
+        <%= category.label :name, "Category name:" %>
+        <%= category.text_field :name %>
     <% end %>
-</div>
+    <hr>
+    <div>
+        <%= f.submit class:"btn btn-success" %>
+    </div>
+<% end %>

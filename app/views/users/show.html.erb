@@ -1,4 +1,14 @@
-<h2>This is show page</h2>
 
-<%= render partial: 'user', locals: {user: @user} %>
+<div class="container">
+    <%= render partial: 'user', locals: {user: @user} %>
+
+    <div>Totals for <%= current_user.full_name %>:  
+        <p>Reviews:
+            <%= Review.reviews_by_user(@user).count %>
+        </p>
+        Books: 
+      
+    </div>
+    
+</div>
 

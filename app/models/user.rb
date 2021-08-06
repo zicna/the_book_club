@@ -25,4 +25,8 @@ class User < ApplicationRecord
     def full_name
         "#{self.first_name} #{self.last_name}" 
     end
+
+    def format_date
+        self.birth_date.strftime("%B %d, %Y")
+    end
 end
