@@ -34,7 +34,7 @@ class ReviewsController < ApplicationController
             # byebug
             # render :new, alert: "Review not created"
             flash[:alert] = "New review for #{@book.title} has not been created."
-            redirect_to new_book_review_path(@book)
+            render :new
         end
     end
 
