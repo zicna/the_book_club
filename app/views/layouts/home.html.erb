@@ -14,30 +14,13 @@
   <body>
     <div class="container">
       <h1 class="heading">The Book Club</h1>
-      <hr>
-      <div class="topnav">
-        <%= link_to "Home", '/' %>
-        <%= link_to "About", '/about' %>
-        <%= link_to "Contact", '/contact' %>
-        <div class="login-container">
-          <%= link_to "Log in with google", "/auth/google_oauth2", method:"post" %>
-          <%= link_to "Log in", '/login', method: "get" %>
-          <%= link_to "Sign up", '/signup', method: "get" %>
-        </div>
-      </div>
-      <div>
-        <% flash.each do |type, msg| %>
-          <% if type== "alert" %>
-            <%= content_tag :div, msg, class:"alert alert-danger"%>
-            <% else %>
-            <%= content_tag :div, msg, class:"alert alert-success"%>
-          <% end %>
-        <% end %>
-      </div>
-      <hr>
-     <div class="container"> 
+      
+      <%= render partial: 'shared/nav_bar_login_sigin' %>
+      <%= render partial: 'shared/flash' %>
+    
+     
       <%= yield %>
-    </div>
+    
     </div>
   </body>
 </html>
