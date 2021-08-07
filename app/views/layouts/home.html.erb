@@ -7,7 +7,6 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%# <%= stylesheet_link_tag 'welcome.css', media: 'all', 'data-turbolinks-track': 'reload' %> %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -17,9 +16,12 @@
       <h1>The Book Club</h1>
       <hr>
       <nav class="nav">
-        <%= button_to "Log in with google", "/auth/google_oauth2", class:"nav-link" %>
-        <%= button_to "Log in", '/login', method: "get", class:"nav-link" %>
-        <%= button_to "Sign up", '/signup', method: "get", class:"nav-link" %>
+        <%= link_to "Home", '/' %>  |
+        <%= link_to "About", '/about' %>  |
+        <%= link_to "Contact", '/contact' %>  |
+        <%= link_to "Log in with google", "/auth/google_oauth2", method:"post" %>  |
+        <%= link_to "Log in", '/login', method: "get" %>  |
+        <%= link_to "Sign up", '/signup', method: "get" %>  |
       </nav>
       <div>
         <% flash.each do |type, msg| %>
@@ -37,3 +39,4 @@
     </div>
   </body>
 </html>
+
