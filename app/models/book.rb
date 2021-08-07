@@ -19,7 +19,6 @@ class Book < ApplicationRecord
   scope :added_by, -> (user) {where("created_by == ?", user.id)}
 
 def author_attributes=(hash)
-  # byebug
   if hash[:first_name].present?
   @author = Author.find_or_create_by(
     first_name: hash[:first_name],

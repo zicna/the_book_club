@@ -4,7 +4,7 @@
             <strong><%= link_to category.name, category_path(category) %></strong> 
         </p>
          <p>
-            (total of: <%= count_books_by_category(category) %> books)
+            (total of: <%= pluralize(count_books_by_category(category), "Book") %> )
         </p>
         
 

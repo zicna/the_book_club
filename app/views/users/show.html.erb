@@ -1,10 +1,8 @@
 <div>
     <%= render partial: 'user', locals: {user: @user} %>
     <%= render partial: 'user_reviews', locals: {user: @user} %>
-    
-</div>
 
-<p>
+    <p>
     Books added (total of <%= books_added(@user).count %> ):
 </p> 
     <ul>
@@ -24,4 +22,8 @@
             </li>
         <% end %>
     </ul>
+    
+</div>
+
+
 
