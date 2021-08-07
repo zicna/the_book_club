@@ -41,6 +41,7 @@
  * {box-sizing: border-box;}
  
 body {
+   margin: 0;
    background-color: var(--yellow-light);
 }
 
@@ -86,6 +87,32 @@ body {
 /* .mb-3 {
    text-align: center;
 } */
+/********** stayling navigation bar on home page ***************/
+.topnav {
+   overflow: hidden;
+   background-color: var(--yellow);
+ }
+ 
+ .topnav a {
+   float: left;
+   display: block;
+   color: black;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   font-size: 17px;
+ }
+ 
+ .topnav a:hover {
+   background-color: var(--yellow-brown);
+   color: black;
+ }
+
+ .topnav .login-container {
+   float: right;
+ }
+ 
+
 
  .bg-image {
    outline: 2px solid black;
