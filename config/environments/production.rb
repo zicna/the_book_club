@@ -1,6 +1,14 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+
+  # adding for bckground pic to show:
+  config.serve_static_assets = false
+  config.assets.compress = true
+  config.assets.digest = true
+
+
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
