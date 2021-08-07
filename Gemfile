@@ -25,6 +25,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
+# addin icons to app
+gem "font-awesome-rails"
+gem 'font-awesome-sass', '~> 4.7.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
