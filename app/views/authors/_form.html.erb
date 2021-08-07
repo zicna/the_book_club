@@ -1,35 +1,43 @@
 
 
-    <%= display_errors(author) %>
-    <%= form_for author do |f| %>
 
-        <div class="mb-3">
-            <%= f.label :first_name, class:"form-label" %>
-            <%= f.text_field :first_name, class:"form-control " %>
-        </div>
-        <div class="mb-3">
-            <%= f.label :last_name, class:"form-label" %>
-            <%= f.text_field :last_name, class:"form-control" %>
-        </div>
-        
-        <div class="mb-3">
-            <%= f.label :birth_date, class:"form-label" %>
-            <%= f.date_field :birth_date, class:"form-control" %>
-        </div>
-        <div class="mb-3">
-            <%= f.label :death_date, class:"form-label" %>
-            <%= f.date_field :death_date, class:"form-control"%>
-        </div>
-        <div class="mb-3">
-            <%= f.label :image, class:"form-label" %>
-            <%= f.text_field :image, class:"form-control"%>
-        </div>
-        <div class="mb-3">
-            <%= f.label :wiki_page, class:"form-label" %>
-            <%= f.text_field :wiki_page, class:"form-control"%>
-        </div>
-        <div class="mb-3">
-            <%= f.submit class:"btn btn-success" %>
-        </div>
-    <% end %>
-</div>
+        <%= display_errors(author) %>
+        <%= form_for author do |f| %>
+    
+            <div class="row">
+                <div class="col">
+                    <%= f.label :first_name, class:"form-label" %>
+                    <%= f.text_field :first_name, class:"form-control " %>
+                </div>
+                <div class="col">
+                    <%= f.label :last_name, class:"form-label" %>
+                    <%= f.text_field :last_name, class:"form-control" %>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <%= f.label :birth_date, class:"form-label" %>
+                    <%= f.date_field :birth_date, class:"form-control" %>
+                </div>
+                <div class="col">
+                    <%= f.label :death_date, class:"form-label" %>
+                    <%= f.date_field :death_date, class:"form-control"%>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <%= f.label :image, class:"form-label" %>
+                    <%= f.text_field :image, class:"form-control"%>
+                </div>
+                <div class="col">
+                    <%= f.label :wiki_page, class:"form-label" %>
+                    <%= f.text_field :wiki_page, class:"form-control"%>
+                </div>
+            </div>
+            <div >
+                <%= f.submit class:"btn btn-success" %>
+            </div>
+        <% end %>
+    
+  

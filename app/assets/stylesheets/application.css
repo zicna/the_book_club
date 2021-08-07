@@ -14,6 +14,7 @@
  *= require_self
  */
 body {
+   background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Favirtualbookclub%2F&psig=AOvVaw0Yx2Wv_Gs6yPf9bL8yEyAQ&ust=1628182218840000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPjUqMjpl_ICFQAAAAAdAAAAABAL");
     
 }
  /* .bg-image {
@@ -26,7 +27,6 @@ body {
  /* <%= image_tag 'background/book_store.jpeg' %> */
  /* .bg-image {
    padding: 20em;
-   background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Favirtualbookclub%2F&psig=AOvVaw0Yx2Wv_Gs6yPf9bL8yEyAQ&ust=1628182218840000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPjUqMjpl_ICFQAAAAAdAAAAABAL");
    
 } */
 /* all links in app with no underline and change font color */

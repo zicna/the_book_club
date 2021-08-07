@@ -1,22 +1,32 @@
 
-    <div>
-        <%= author.label :first_name %>
-        <%= author.text_field :first_name %>
+    <div class="row">
+        <div class= "col">
+            <%= author.label :first_name, class:"form-label" %>
+            <%= author.text_field :first_name, class:"form-control" %>
+        </div>
+        <div class="col">
+            <%= author.label :last_name, class:"form-label" %>
+            <%= author.text_field :last_name, class:"form-control" %>
+        </div>
     </div>
-    <div>
-        <%= author.label :last_name %>
-        <%= author.text_field :last_name %>
+    <div class="row">
+        <div class="col">
+            <%= author.label :birth_date, class:"form-label" %>
+            <%= author.date_field :birth_date, class:"form-control" %>
+        </div>
+        <div class="col">
+            <%= author.label :death_date, class:"form-label" %>
+            <%= author.date_field :death_date, class:"form-control" %>
+        </div>
     </div>
-    <div>
-        <%= author.label :birth_date %>
-        <%= author.date_field :birth_date %>
-    </div>
-    <div>
-        <%= author.label :death_date %>
-        <%= author.date_field :death_date %>
-    </div>
-    <div>
-        <%= author.label :wiki_page %>
-        <%= author.text_field :wiki_page %>
-    </div>
+        <div class="row">
+            <div class="col">
+                <%= author.label :wiki_page, class:"form-label" %>
+                <%= author.text_field :wiki_page, class:"form-control" %>
+            </div>
+            <div class="col">
+                <%= author.label :image, class:"form-label" %>
+                <%= author.text_field :image, class:"form-control" %>
+            </div>
+        </div>
 

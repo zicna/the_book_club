@@ -3,52 +3,66 @@
 <%= form_for book do |f| %>
     <%= f.hidden_field :created_by, value: current_user.id %>
     
-    <div class="mb-3">
-        <%= f.label :title, class:"form-label" %>
-        <%= f.text_field :title, class:"form-control" %>
+    <div class="row">
+        <div class="col">
+            <%= f.label :title, class:"form-label" %>
+            <%= f.text_field :title, class:"form-control", :required =>true %>
+        </div>
+        
+        <div class="col">
+            <%= f.label :wiki_page, class:"form-label" %>
+            <%= f.text_field :wiki_page, class:"form-control" %>
+        </div>
     </div>
-    <div class="mb-3">
-        <%= f.label :description, class:"form-label" %>
-        <%= f.text_area :description, class:"form-control" %>
-    </div>
-    <div class="mb-3">
-        <%= f.label :wiki_page, class:"form-label" %>
-        <%= f.text_field :wiki_page, class:"form-control" %>
-    </div>
-    <div class="mb-3">
-        <%= f.label :price, class:"form-label" %>
-        <%= f.number_field :price, step: 0.1, class:"form-control" %>
-    </div>
-    <div class="mb-3">
-        <%= f.label :invt, class:"form-label" %>
-        <%= f.text_field :invt, class:"form-control" %>
+
+        <div class="col">
+            <%= f.label :description, class:"form-label" %>
+            <%= f.text_area :description, class:"form-control", :required =>true %>
+        </div>
+    
+    <div class="row">
+        <div class="col">
+            <%= f.label :price, class:"form-label" %>
+            <%= f.number_field :price, step: 0.1, class:"form-control", :required =>true %>
+        </div>
+        <div class="col">
+            <%= f.label :invt, class:"form-label" %>
+            <%= f.text_field :invt, class:"form-control", :required =>true %>
+        </div>
     </div>
     <hr>
     
-    <div >
-        <p> Choose from existing authors:</p>
+    <div class="form-container">
+        <h4>Book author</h4>
+        <h6> Choose from existing authors:</h6>
         <%= f.collection_select( :author_id, authors, :id, :full_name, {:include_blank => "Choose author"}) if authors  %>
     </div>
-    
-    <%# Place for refactor %>
-    <div >
-        <p>Or Create New Author:</p>
+    <div class="form-container">
+        <h6>Or Create New Author:</h6>
         <%= f.fields_for :author do |author| %>
             <%= render partial: 'form_author', locals: {author: author} %>
         <% end %>
     </div>
+    
     <hr>
-    <p> Choose from existing categories:</p>
-    <div>
+    <div class="form-container">
+        <h4>Book category</h4>
+
+        <p> Choose from existing categories:</p>
+
         <%= f.collection_select( :category_id, categories, :id, :name, {:include_blank => "Choose category"}) if categories %>
     </div>
-    <p>Or Create New Category:</p>
-    <%= f.fields_for :category do |category| %>
-        <%= category.label :name, "Category name:" %>
-        <%= category.text_field :name %>
-    <% end %>
-    <hr>
-    <div>
-        <%= f.submit class:"btn btn-success" %>
+    <div class="form-container">
+        <p>Or Create New Category:</p>
+        <%= f.fields_for :category do |category| %>
+            <%= category.hidden_field :created_by, value: current_user.id%>
+            <%= category.label :name, "Category name:", class:"form-label" %>
+            <%= category.text_field :name %>
+        <% end %>
+        <hr>
+        <div>
+            <%= f.submit class:"btn btn-success" %>
+        </div>
     </div>
+    
 <% end %>
