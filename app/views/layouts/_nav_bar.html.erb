@@ -1,10 +1,14 @@
-<nav class="nav">
-  <%= link_to "Home |", "/", class:"nav-link" %>
-  <%= link_to "Books  |", books_path, class:"nav-link" %>
-  <%= link_to "Authors  |", authors_path, class:"nav-link" %>
-  <%= link_to "Categories |", categories_path, class:"nav-link" %>
-  <%= link_to "Users  |", users_path, class:"nav-link" if is_admin? %>
-  <%= link_to "Profile  |", user_path(session[:user_id]), class:"nav-link" %> 
-  <%= button_to "Log out", '/logout', class:"nav-link" %>
-</div>
+
+  <%= link_to "Home", "/", class:"nav-link" %>
+  <%= link_to "About", '/about' %>
+  <%= link_to "Contact", '/contact' %>
+  <%= link_to "Books", books_path, class:"nav-link" %>
+  <%= link_to "Authors", authors_path, class:"nav-link" %>
+  <%= link_to "Categories ", categories_path, class:"nav-link" %>
+  <%= link_to "Users", users_path, class:"nav-link" if is_admin? %>
+  <%= link_to "Profile", user_path(session[:user_id]), class:"nav-link" %> 
+  <div class="login-container">
+    <%= link_to "Log out", '/logout', method: :post %>
+  </div>
+
 

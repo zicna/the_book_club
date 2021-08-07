@@ -13,25 +13,26 @@
   </head>
 
   <body>
-  <div class="container">
-    <h1>The Book Club</h1>
-    <div>
-      <%= render partial: 'layouts/nav_bar' %>
-    </div>
-    <hr>
-    <div>
-      <% flash.each do |type, msg| %>
-        <% if type== "alert" %>
-          <%= content_tag :div, msg, class:"alert alert-danger"%>
-          <% else %>
-          <%= content_tag :div, msg, class:"alert alert-success"%>
-        <% end %>
-      <% end %>
-    </div>
-    <hr>
     <div class="container">
-      <%= yield %>
+      <h1 class="heading">The Book Club</h1>
+      <hr>
+      <div class="topnav">
+        <%= render partial: 'layouts/nav_bar' %>
+      </div>
+      <hr>
+      <div>
+        <% flash.each do |type, msg| %>
+          <% if type== "alert" %>
+            <%= content_tag :div, msg, class:"alert alert-danger"%>
+            <% else %>
+            <%= content_tag :div, msg, class:"alert alert-success"%>
+          <% end %>
+        <% end %>
+      </div>
+      <hr>
+      <div class="container">
+        <%= yield %>
+      </div>
     </div>
-  </div>
   </body>
 </html>
