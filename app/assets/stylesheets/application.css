@@ -128,6 +128,12 @@ body {
     text-align: center;
     padding: 20px;
  }
+
+ .flash-msg {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+ }
  
 /* all links in app with no underline and change font color */
 a {
