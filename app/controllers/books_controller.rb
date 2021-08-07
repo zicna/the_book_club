@@ -12,7 +12,6 @@ class BooksController < ApplicationController
     end
 
     def show
-        # byebug
     end
 
     def new
@@ -26,13 +25,13 @@ class BooksController < ApplicationController
             redirect_to book_path(@book), notice: "New book Created"
         else
             flash[:alert] = "Book not Created"
-            # byebug
+            @book.build_category
+            @book.build_author
             render :new
         end
     end
 
     def edit
-        # byebug
         @book.build_category
         @book.build_author
     end
