@@ -1,7 +1,9 @@
-<h1>This is edit page</h1>
-
-<%= render partial: 'form', locals: {
-    review: @review,
-    book: @book,
-    user: current_user
-    } %>
+<div class="form-container">
+    <h1>This is edit page</h1>
+    
+    <%= render partial: 'form', locals: {
+        review: @review,
+        book: @book,
+        user: current_user
+        } %>
+</div>

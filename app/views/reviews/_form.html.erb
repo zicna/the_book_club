@@ -1,16 +1,15 @@
-<div>Create new review:
+<div class="col">
     <%= display_errors(review) %>
-   
     <%= form_for ([book, review]) do |r| %>
         <%= r.hidden_field :book_id, value: book.id %>
         <%= r.hidden_field :user_id, value: user.id %>
-        <div>
-            <%= r.label :content %>
-            <%= r.text_area :content %>
+        <div class="width-50-center">
+            <%= r.label :content, class:"form-label " %>
+            <%= r.text_area :content, class:"form-control" %>
         </div>
-        <div>
-            <%= r.label :mark %>
-            <%= r.number_field :mark %>
+        <div class="width-20-center">
+            <%= r.label :mark, class:"form-label" %>
+            <%= r.number_field :mark, class:"form-control" %>
         </div>
         <div>
             <%= r.submit class:"btn btn-success"  %>

@@ -19,20 +19,15 @@
     
     <%= link_to "All Reviews for '#{@book.title}' book", book_reviews_path(@book.id) if !@book.reviews.empty?%>
     <hr>
-    
+    <% if one_review_per_user_per_book(@book).empty? %>
+        <%= link_to "Create new review", new_book_review_path(@book), class:"edit-del"%>
+    <% end %>
+        <%= link_to "Back to all Books", books_path, class:"edit-del" %>
+    <hr>
     <h4>Reviews:</h4>
     
-    <%= render(:partial => 'reviews/review', :collection => @reviews) || "You have no reviews for #{@book.title} book. Be first to leave review. Link bellow." %>
+    <%= render(:partial => 'reviews/review', :collection => @reviews) || "You have no reviews for #{@book.title} book. Be first to leave review." %>
     
-    <hr>
-    
-    
-    <% if one_review_per_user_per_book(@book).empty? %>
-        <%= link_to "Create new review", new_book_review_path(@book)%>
-    <% end %>
-    <div>
-        <%= link_to "Back to all Books", books_path %>
-    </div>
 </div>
 
 

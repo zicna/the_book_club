@@ -1,7 +1,9 @@
-<h1>This is new page</h1>
-
-<%= render partial: 'form', locals: {
-    review: @review,
-    book: @book,
-    user: current_user
-    } %>
+<div class="form-container">
+    <h2>Create new review for <%= @book.title %></h2>
+    
+    <%= render partial: 'form', locals: {
+        review: @review,
+        book: @book,
+        user: current_user
+        } %>
+</div>
