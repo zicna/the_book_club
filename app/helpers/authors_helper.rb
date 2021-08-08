@@ -17,13 +17,13 @@ module AuthorsHelper
 
     def edit_author_by_admin(author)
         if is_admin?
-            link_to "Edit author", edit_author_path(author)
+            link_to "Edit author", edit_author_path(author), class:"edit-del"
         end
     end
 
     def delete_author_by_admin(author)
         if is_admin?
-            link_to "Delete author", author_path(author), method: :delete
+            link_to "Delete author", author_path(author), method: :delete, class:"edit-del"
         end
     end
 end
