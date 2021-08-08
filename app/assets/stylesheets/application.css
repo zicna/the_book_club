@@ -115,6 +115,7 @@ body {
 
 
  .bg-image {
+    position: relative;
    outline: 2px solid black;
    padding: 20em;
    background-image: url('book_club_cover.png');
@@ -225,4 +226,16 @@ a {
 
 .user {
    padding: 10px;
+}
+
+
+.quote {
+   /* outline: 2px solid rgb(216, 207, 207); */
+   color: blanchedalmond;
+   font-size: x-large;
+   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   position: absolute;
+   top: 10%;
+   left: 10%;
+   
 }
