@@ -14,7 +14,6 @@
     <div>
         <%= edit_book_by_admin(@book) %>    |
         <%= delete_book_by_admin(@book) %>
-        
     </div>
     
     <%= link_to "All Reviews for '#{@book.title}' book", book_reviews_path(@book.id) if !@book.reviews.empty?%>
