@@ -1,13 +1,13 @@
 <%= display_errors(category) %>
 <%= form_for category do |c| %>
     <%= c.hidden_field :created_by, value: current_user.id %>
-   <div class="mb-3">
+   <div class="col cat-name">
         <%= c.label :name, class:"form-label" %>
-        <%= c.text_field :name, class:"form-control " %>
+        <%= c.text_field :name, class:"form-control" %>
    </div>
-    <div class="mb-3">
+    <div class="col">
         <%= c.label :description, class:"form-label" %>
         <%= c.text_area :description, class:"form-control " %>
     </div>
-    <div class="mb-3"><%= c.submit class:"btn btn-success" %></div>
+    <div class="col"><%= c.submit class:"btn btn-success" %></div>
 <% end %>

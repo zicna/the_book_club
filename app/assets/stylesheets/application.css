@@ -232,7 +232,7 @@ a {
    padding: 10px;
 }
 
-
+/******* welcome#home page quotes **********/
 .quote {
    /* outline: 2px solid rgb(216, 207, 207); */
    color: blanchedalmond;
@@ -246,6 +246,12 @@ a {
 /* Collection select in books/_form */
 
 .col-select {
+   width: 33%;
+   margin: auto;
+}
+
+/* category name field new and edit */
+.cat-name {
    width: 33%;
    margin: auto;
 }

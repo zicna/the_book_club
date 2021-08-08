@@ -1,4 +1,4 @@
-<div class="mb-3 container">
-    <h2>Edit Author</h2>
+<div class="form-container">
+    <h2>Edit <%= @author.full_name %></h2>
     <%= render partial: 'form', locals: {author: @author} %>
 </div>
