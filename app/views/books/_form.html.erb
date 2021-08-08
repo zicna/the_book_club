@@ -35,9 +35,9 @@
     <div class="form-container">
         <h4>Book author</h4>
         <h6> Choose from existing authors:</h6>
-        <%= f.collection_select( :author_id, authors, :id, :full_name, {:include_blank => "Choose author"}) if authors  %>
-    </div>
-    <div class="form-container">
+        <%= f.collection_select( :author_id, authors, :id, :full_name, {:include_blank => "Choose author"}, class:"col-select form-control") if authors  %>
+    
+    
         <h6>Or Create New Author:</h6>
         <%= f.fields_for :author do |author| %>
             <%= render partial: 'form_author', locals: {author: author} %>
@@ -48,16 +48,15 @@
     <div class="form-container">
         <h4>Book category</h4>
 
-        <p> Choose from existing categories:</p>
+        <h6> Choose from existing categories:</h6>
 
-        <%= f.collection_select( :category_id, categories, :id, :name, {:include_blank => "Choose category"}) if categories %>
-    </div>
-    <div class="form-container">
-        <p>Or Create New Category:</p>
+        <%= f.collection_select( :category_id, categories, :id, :name, {:include_blank => "Choose category"}, class:"col-select form-control") if categories %>
+   
+        <h6>Or Create New Category:</h6>
         <%= f.fields_for :category do |category| %>
             <%= category.hidden_field :created_by, value: current_user.id%>
             <%= category.label :name, "Category name:", class:"form-label" %>
-            <%= category.text_field :name %>
+            <%= category.text_field :name, class:"col-select form-control" %>
         <% end %>
         <hr>
         <div>

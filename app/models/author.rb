@@ -7,7 +7,7 @@ class Author < ApplicationRecord
         scope: [:first_name, :last_name]
     }
     
-    scope :order_by_first_name, ->{order(first_name: :desc)}
+    scope :order_by_first_name, ->{order(first_name: :asc)}
     
     def full_name
         "#{self.first_name} #{self.last_name}"
@@ -16,7 +16,7 @@ class Author < ApplicationRecord
     def format_birth_date
         self.birth_date.strftime("%B %d, %Y")
     end
-    
+
     def format_death_date
         self.death_date ? self.death_date.strftime("%B %d, %Y") : nil
     end
