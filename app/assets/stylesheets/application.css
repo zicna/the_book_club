@@ -185,7 +185,11 @@ a {
    width: 33%;
    box-shadow: 0 3px 10px rgb(0 0 0 / 0.6);
    /* background-color: var(--green); */
+}
 
+.btn-search:hover {
+   background-color: var(--yellow-brown);
+   /* display: inline-block */
 }
 /* *********************Fields Wirh Errors****************** */
 

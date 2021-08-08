@@ -9,6 +9,8 @@ class BooksController < ApplicationController
     
     
     def index
+        # byebug
+        @books = Book.search(params[:search])
     end
 
     def show
