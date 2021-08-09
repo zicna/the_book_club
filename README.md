@@ -20,22 +20,22 @@
     # All your stats will be shown on your profile page
     # On the book individual page you will be able to see all reviews made by other users and link to the web page with more info about the book
     # 
-
-
- #  Once all installation is done you will find yourself on the home page of our application
- # From here you can check pages such as Home / About / Contact where you can get general info about this app
- # On the same page you are given options to 
+    #  Once all installation is done you will find yourself on the home page of our application
+    # From here you can check pages such as Home / About / Contact where you can get general info about this app
+    # On the same page you are given options to 
     ## login (if you already have an account)
     ## sign in (to create a new user)
     ## login with google (if you are new to this app this will create a new user or it will simply log you in with your Google account)
-# Once you are logged in you can check pages such as Books / Authors / Categories
-    ## on each of these pages you can find a list of all books/authors/categories with the option to create new at the end 
-        of the page
+    # Once you are logged in you can check pages such as Books / Authors / Categories
+    ## on each of these pages you can find a list of all books/authors/categories with the option to create new at the end of the page
 
 
 * Contributiors quide
-# let us know what you thing about our app by sendin mail on zivkovicmilan1987@gmail.com
-# We would love to hear from you
+    # let us know what you thing about our app by sendin mail on zivkovicmilan1987@gmail.com
+    # We would love to hear from you
+
+* MIT open source license 
+    # https://github.com/zicna/the_book_club/blob/main/LICENSE
 
 
 * System dependencies
