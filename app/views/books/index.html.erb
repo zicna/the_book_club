@@ -1,6 +1,6 @@
 <div>
     <div class="form-container">
-        <%= form_tag books_path, :method => 'get' do %>
+        <%= form_tag books_path, method: 'get' do %>
             <%= text_field_tag :search, params[:search], class:"form-control width-33-center" %>
             <%= submit_tag "Search by title", class:"btn btn-search width-33-center" %>
         <% end %>
