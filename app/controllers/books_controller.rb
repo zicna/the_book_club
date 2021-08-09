@@ -9,7 +9,7 @@ class BooksController < ApplicationController
     
     
     def index
-        # byebug
+
         @books = Book.search(params[:search])
     end
 
@@ -22,12 +22,12 @@ class BooksController < ApplicationController
     end
 
     def create
-        # byebug
+
         @book = Book.new(book_params)
         if @book.save
             redirect_to book_path(@book), notice: "New book Created"
         else
-            byebug
+            
             flash[:alert] = "Book not Created"
             @book.build_category
             @book.build_author
