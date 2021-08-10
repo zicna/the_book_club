@@ -16,7 +16,7 @@
 /* background-image: url('book_club_cover.png'); */
    /* background-repeat: no-repeat;
    background-size: 100%; */
-
+   
  :root {
    --blue: #1e90ff;
    --white: #ffffff;
@@ -142,7 +142,7 @@ textarea {
    background-repeat: no-repeat;
    background-size: 100%;
    width: 100%;
-   height: 100vw%;
+   height: 100vw;
  }
 
  .heading {
