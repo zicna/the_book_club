@@ -133,12 +133,22 @@ textarea {
  }
  
 
-
- .bg-image {
-    position: relative;
-   outline: 2px solid black;
+/* background pictures for Home and About page */
+ .bg-image-home {
+   position: relative;
+   /* outline: 2px solid black; */
    padding: 20em;
    background-image: url('book_club_cover.png');
+   background-repeat: no-repeat;
+   background-size: 100%;
+   width: 100%;
+   height: 100vw;
+ }
+ .bg-image-about {
+   position: relative;
+   /* outline: 2px solid black; */
+   padding: 20em;
+   background-image: url('bookshelves_background.jpeg');
    background-repeat: no-repeat;
    background-size: 100%;
    width: 100%;
