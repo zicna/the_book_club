@@ -291,4 +291,13 @@ books.each do |book|
         )
         # p book_id
 end
+
+User.create(
+    first_name: "admin",
+    last_name: "admin",
+    email: "admin@admin.com",
+    password: "1234",
+    admin: true,
+    birth_date: "01/01/2001"
+)
 puts "data loaded successfully"
