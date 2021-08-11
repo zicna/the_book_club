@@ -2,27 +2,36 @@
     <%= render partial: 'user', locals: {user: @user} %>
     <%= render partial: 'user_reviews', locals: {user: @user} %>
 
-    <p>
-    Books added (total of <%= books_added(@user).count %> ):
+<p>
+    Books added (total of <%= @books.count %> ):
 </p> 
     <ul>
-        <% books_added(@user).each do |book| %>
+        <% @books.each do |book| %>
             <li>
                 <%= link_to book.title, book_path(book)%>
             </li>
         <% end %>
     </ul>
 <p>
-    Categories added (total of <%= categories_added(@user).count %> ):
+    Categories added (total of <%= @categories.count %> ):
 </p>
     <ul>
-        <% categories_added(@user).each do |category| %>
+        <% @categories.each do |category| %>
             <li>
                 <%= link_to category.name, category_path(category)%>
             </li>
         <% end %>
     </ul>
-    
+<p>
+    Authors added (total of <%= @authors.count %> ):
+</p> 
+    <ul>
+        <% @authors.each do |book| %>
+            <li>
+                <%= link_to book.title, book_path(book)%>
+            </li>
+        <% end %>
+    </ul>
 </div>
 
 

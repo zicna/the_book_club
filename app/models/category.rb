@@ -3,5 +3,5 @@ class Category < ApplicationRecord
 
     validates :name, presence: true, uniqueness: true
 
-    scope :category_added_by_user, -> (user) {where("created_by == ? ", user.id)}
+    scope :added_by, -> (user) {where("created_by == ? ", user.id)}
 end

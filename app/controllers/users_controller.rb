@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     before_action :get_user, only: [:show, :edit, :update, :destroy]
     before_action :set_user, only: :new
     before_action :get_users, only: :index
+    before_action :books_added_by_current_user, only: :show
+    before_action :authors_added_by_current_user, only: :show
+    before_action :categories_added_by_current_user, only: :show
+
     
     def index
         if is_admin?
@@ -72,6 +76,18 @@ class UsersController < ApplicationController
 
     def get_users
         @users = User.all
+    end
+
+    def books_added_by_current_user
+        @books = Book.added_by(current_user)
+    end
+
+    def categories_added_by_current_user
+        @categories = Category.added_by(current_user)
+    end
+
+    def authors_added_by_current_user
+        @authors = Author.added_by(current_user)
     end
 
     # def get_books_added_by(user)

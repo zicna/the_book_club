@@ -12,16 +12,16 @@ module UsersHelper
         end
     end
 
-    def books_added(user)
-        Book.added_by(user)
-    end
+    # def books_added(user)
+    #     Book.added_by(user)
+    # end
 
-    def avg_review_mark(user)
-        Review.avg_review_mark_by_user(user)
-    end
+    # def avg_review_mark(user)
+    #     Review.avg_review_mark_by_user(user)
+    # end
 
-    def categories_added(user)
-        Category.category_added_by_user(user)
-    end
+    # def categories_added(user)
+    #     Category.category_added_by_user(user)
+    # end
 
 end
