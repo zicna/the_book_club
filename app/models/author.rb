@@ -8,6 +8,7 @@ class Author < ApplicationRecord
     }
     
     scope :order_by_first_name, ->{order(first_name: :asc)}
+    scope :added_by, -> (user) {where("created_by == ?", user.id)}
     
     def full_name
         "#{self.first_name} #{self.last_name}"

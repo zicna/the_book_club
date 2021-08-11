@@ -3,7 +3,7 @@
 
         <%= display_errors(author) %>
         <%= form_for author do |f| %>
-    
+            <%= f.hidden_field :created_by, value: current_user.id %>
             <div class="row">
                 <div class="col">
                     <%= f.label :first_name, class:"form-label" %>
