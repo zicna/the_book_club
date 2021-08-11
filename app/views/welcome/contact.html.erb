@@ -2,7 +2,7 @@
  
 
 <div class="icon-container">
-    <%= mail_to("zivkovicmilan1987@gmail.com", :name=>current_user.full_name, :subject=>"About 'The book Club'", :target=>'_blank') do %>
+    <%= mail_to("zivkovicmilan1987@gmail.com", nil, :subject=>"About 'The book Club'", :target=>'_blank') do %>
       <i class="fas fa-paper-plane fa-4x"></i>
     <% end %>
     <p class="icon-description"><b>Email us:</b></p>
