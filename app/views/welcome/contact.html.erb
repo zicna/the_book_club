@@ -1,1 +1,31 @@
-<h1>Contact</h1>
+<h1>Contact us:</h1>
+ 
+
+<div class="icon-container">
+    <%= mail_to("zivkovicmilan1987@gmail.com", :name=>current_user.full_name, :subject=>"About 'The book Club'", :target=>'_blank') do %>
+      <i class="fas fa-paper-plane fa-4x"></i>
+    <% end %>
+    <p class="icon-description"><b>Email us:</b></p>
+</div>
+
+<div class="icon-container">
+    <%= link_to 'https://github.com/zicna/the_book_club', :target=>"_blank" do %>
+      <i class="fab fa-github fa-4x"></i>
+    <% end %>
+    <p class="icon-description"><b>Checkout full github repo</b></p>
+</div>
+
+<div class="icon-container">
+    <%= link_to contact_path do %>
+      <i class="fab fa-linkedin fa-4x"></i>
+    <% end %>
+    <p class="icon-description"><b>Comming soon...</b></p>
+</div>
+<div class="icon-container">
+    <%= link_to contact_path do %>
+      <i class="fab fa-instagram fa-4x"></i>
+    <% end %>
+    <p class="icon-description"><b>Comming soon...</b></p>
+</div>
+
+
