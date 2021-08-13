@@ -35,8 +35,8 @@ class User < ApplicationRecord
         self.created_at.strftime("%B %d, %Y")
     end
 
-    # def average_revirew_mark_by_user
-    #     self.joins(:reviews).group(:first_name).average(:mark).to_i
-    # end
+    def self.average_review_mark_by_user
+        self.joins(:reviews).group(:id, :first_name, :last_name).average(:mark)
+    end
 
 end
