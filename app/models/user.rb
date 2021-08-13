@@ -22,6 +22,7 @@ class User < ApplicationRecord
     # validates :username, presence: true, uniqueness: true
 
 
+
     def full_name
         "#{self.first_name} #{self.last_name}" 
     end
@@ -33,5 +34,9 @@ class User < ApplicationRecord
     def member_since
         self.created_at.strftime("%B %d, %Y")
     end
+
+    # def average_revirew_mark_by_user
+    #     self.joins(:reviews).group(:first_name).average(:mark).to_i
+    # end
 
 end

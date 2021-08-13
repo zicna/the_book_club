@@ -37,6 +37,8 @@ gem 'bootsnap'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'sprockets', '~> 3.7.2'
 
+gem 'table_print'
+
 group :development, :test do
 gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
