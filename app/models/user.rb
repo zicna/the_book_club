@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :reviews
+    has_many :reviews, foreign_key: "user_id", dependent: :destroy
     has_many :books, through: :reviews
 
     has_secure_password #authenticate, password, validate
