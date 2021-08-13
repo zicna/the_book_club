@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2021_08_11_195829) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "book_id", null: false
-    t.integer "user_id", default: 1
+    t.integer "user_id", null: false
     t.text "content"
     t.integer "mark"
     t.datetime "created_at", precision: 6, null: false
