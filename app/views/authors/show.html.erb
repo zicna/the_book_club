@@ -2,8 +2,8 @@
 <%= render partial: 'author', locals: {author: @author} %>
   (<%= @author.format_birth_date %> - <%= @author.format_death_date %>)
 <div>
-    <%= edit_author_by_admin(@author) %>    |
-    <%= delete_author_by_admin(@author) %>
+        <%= edit_by_admin(@author) %>    |
+        <%= delete_by_admin(@author) %>
 </div>
 <p>
     Read more about this author <%= link_to "here.", "#{@author.wiki_page}", target: "_blank" %>

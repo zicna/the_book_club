@@ -26,11 +26,17 @@ module ApplicationHelper
         current_user ? current_user.admin : false
     end
 
-    # def edit_by_admin
-    #     if is_admin?
-    #         link_to ""
-    #     end
-    # end
+    def edit_by_admin(object)
+        if is_admin?
+            link_to "Edit #{object.class.to_s.downcase}", "/#{ActiveSupport::Inflector.pluralize(object.class.to_s.downcase)}/#{object.id}/edit", class:"edit-del"
+        end
+    end
+
+    def delete_by_admin(object)
+        if is_admin?
+            link_to "Delete #{object.class.to_s.downcase}", "/#{ActiveSupport::Inflector.pluralize(object.class.to_s.downcase)}/#{object.id}", method: "DELETE", class:"edit-del"
+        end
+    end
 
 
 end
