@@ -5,6 +5,7 @@ class AdminController < ApplicationController
     before_action :books_total, only: :show
     before_action :most_reviewed_book, only: :show
     before_action :book_with_highest_avg_mark, only: :show
+    before_action :all_reviews, only: :show
 
 
 
@@ -40,6 +41,10 @@ class AdminController < ApplicationController
 
     def book_with_highest_avg_mark
         @highest_avg_mark_book = Book.book_with_highest_avg_mark
+    end
+
+    def all_reviews
+        @reviews = Review.all
     end
 
 

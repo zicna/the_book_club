@@ -58,7 +58,10 @@ end
 
 
 def self.most_reviewed_book
-  self.joins(:reviews).group(:title).order('COUNT(reviews.id) DESC, title').first
+  # byebug
+  
+    self.joins(:reviews).group(:title).order('COUNT(reviews.id) DESC, title').first
+  
 end
 
 def self.book_with_highest_avg_mark
