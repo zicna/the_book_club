@@ -26,5 +26,11 @@ module ApplicationHelper
         current_user ? current_user.admin : false
     end
 
+    # def edit_by_admin
+    #     if is_admin?
+    #         link_to ""
+    #     end
+    # end
+
 
 end

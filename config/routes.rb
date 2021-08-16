@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   #our post (response) will be handled by middleware
   #middleware is expectiong this route
 
+  get '/appstats', to: "admin#show"
+
   # resources :reviews
   resources :users
 

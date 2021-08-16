@@ -1,0 +1,36 @@
+
+<div class="container">
+<h3 class="heading">Average review mark for each user</h3>
+    <table class="table table-light table-striped table table-hover">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Average review mark</th>
+        </tr>
+            <% @avg_mark.each do |arr, avg| %>
+            <tr>
+                <td><%=arr[0] %></td>
+                <td><%=arr[1] %></td>
+                <td><%=arr[2] %></td>
+                <td><%=avg %></td>
+            </tr>
+            <% end %>
+    </table>
+</div>
+
+<div>
+    <p>Total number of users: <%= @user_count %> </p>
+    <p>Total number of admins: <%= @admin_user_count  %></p>
+</div>
+
+<div>
+    <h3 class="heading">Books</h3>
+    <div>
+        <p>Total number of books on app: <%= @books%></p>
+        <p>Most expencive book: <%= link_to @most_expensive_book.title, book_path(@most_expensive_book) %>($<%= @most_expensive_book.price %>)</p>
+        <p>Most reviewed book: <%= link_to @most_reviewed.title, book_path(@most_reviewed) %> </p>
+        <p>Book with highest average review mark: <%= @highest_avg_mark_book %></p>
+
+    </div>
+</div>
