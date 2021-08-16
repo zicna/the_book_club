@@ -17,12 +17,15 @@ Rails.application.routes.draw do
 
   get '/appstats', to: "admin#show"
 
-  # resources :reviews
   resources :users
 
   resources :authors
   resources :categories
   resources :books
+
+  resources :users, only: :show do
+    resources :reviews, only: :index
+  end
 
   resources :books, only: :show do 
     resources :reviews, only: [:index, :show, :new, :edit, :create, :update, :destroy]

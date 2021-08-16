@@ -5,9 +5,15 @@ class ReviewsController < ApplicationController
     before_action :get_book, only: [:edit, :update]
 
     def index
+        # byebug
         if nested_route?
-            @book = Book.find_by(id: params[:book_id])
-            @reviews = @book.reviews
+            if params[:user_id].present?
+                @user = User.find_by(id: params[:user_id])
+                @reviews = @user.reviews
+            else 
+                @book = Book.find_by(id: params[:book_id])
+                @reviews = @book.reviews
+            end
         else
             get_reviews
         end
@@ -89,7 +95,7 @@ class ReviewsController < ApplicationController
     end
 
     def nested_route?
-        params[:book_id] ? true : false
+        params[:book_id] || params[:user_id] ? true : false
     end
     
     def get_book_from_nested_route

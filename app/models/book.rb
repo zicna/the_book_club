@@ -41,7 +41,7 @@ def category_attributes=(hash)
     self.category = @category
   end
 end
-# search engin for books index page
+# search engine for books index page
 def self.search(search)
   if search 
     where(["title LIKE ?", "%#{search}%"])
@@ -53,19 +53,16 @@ end
 # for admin pages
 def self.most_expensive_book
   self.order(price: :desc).first
-  # sel.order("price DESC").first
+  # self.order("price DESC").first
 end
 
 
 def self.most_reviewed_book
-  # byebug
-  
-    self.joins(:reviews).group(:title).order('COUNT(reviews.id) DESC, title').first
-  
+  self.joins(:reviews).group(:title).order('COUNT(reviews.id) DESC, title').first
 end
 
-def self.book_with_highest_avg_mark
-  # self.joins(:reviews).group(:title).order('AVERAGE(reviews.mark) DESC').first
-  # self.joins(:reviews).group(:title).order('average(reviews.mark) DESC')
-end
+# def self.book_with_highest_avg_mark
+#   # self.joins(:reviews).group(:title).order('AVERAGE(reviews.mark) DESC').first
+#   # self.joins(:reviews).group(:title).order('average(reviews.mark) DESC')
+# end
 end

@@ -6,6 +6,7 @@ class AdminController < ApplicationController
     before_action :most_reviewed_book, only: :show
     before_action :book_with_highest_avg_mark, only: :show
     before_action :all_reviews, only: :show
+    
 
 
 
