@@ -7,8 +7,8 @@
     
         
         <div>
-            <%= edit_by_admin(user) %>    |
-            <%= delete_by_admin(user) %>
+            <%= link_to "Edit user", edit_user_path(current_user), class:"edit-del" %>    |
+            <%= link_to "Delete user", user_path(current_user), method: "DELETE", class:"edit-del" %>  
         </div>
     </div>
 
