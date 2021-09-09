@@ -17,8 +17,6 @@ RSpec.describe User, :type => :model do
         it "User has instance method 'format date' " do
             expect(@user.format_date).to eq("January 01, 2001")
         end
-        
-        
     end
     
     context "validation test" do
@@ -40,10 +38,4 @@ RSpec.describe User, :type => :model do
             
         end
     end
-
-
-    
-    
-    
-    
 end
