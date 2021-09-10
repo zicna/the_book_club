@@ -40,9 +40,10 @@ gem 'sprockets', '~> 3.7.2'
 gem 'table_print'
 
 group :development, :test do
-gem 'dotenv-rails'
+  gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', ">=3.9.0"
 end
 
 group :development do
