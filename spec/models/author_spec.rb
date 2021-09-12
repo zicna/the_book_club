@@ -1,11 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Author, type: :model do
+
+  
   describe Author do
+
     
     before(:each) do
         @author = Author.create!(first_name: "Fyodor", last_name: "Dostojevski", image: "https://upload.wikimedia.org/Project.jpg", birth_date: "11-11-1821", death_date: "9-2-1881", wiki_page: "https://en.wikipedia.org/wiki/Fyodor_Dostoevsky")
     end
+
+    
     it "Author can be created" do
       expect(@author).to be_valid  
     end
