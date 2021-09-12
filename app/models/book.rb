@@ -7,7 +7,9 @@ class Book < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :invt, presence: true
   validates :description, presence: true
-  validates :price, presence: true
+  #line 13. is all we need for 
+  # validates :price, presence: true
+  # validates :price, numericality: :true
   validates :price, numericality: {:greater_than => 0.1}
 
   accepts_nested_attributes_for :author, reject_if: ->(attributes){ attributes['first_name'].blank? }, allow_destroy: true
