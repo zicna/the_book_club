@@ -15,7 +15,7 @@ RSpec.describe Book, type: :model do
 
       @category = Category.create!(
         name: "Novel",
-        description: "A novel is a relatively long work of narrative fiction, typically written in prose and published as a book. A novel is a long, fictional narrative which describes intimate human experiences. The novel in the modern era usually makes use of a literary prose style. The development of the prose novel at this time was encouraged by innovations in printing, and the introduction of cheap paper in the 15th century."
+        description: "A novel..."
       )
       @book = Book.create!(
         author_id: 1,
@@ -28,9 +28,29 @@ RSpec.describe Book, type: :model do
       it "Book can be created" do
         expect(@book).to be_valid          
       end
-      
-    
-    
+      context "Book validations tests" do
+        it "ensure book has a title" do
+          @book.title = nil
+          # @book.save!
+          expect(!!@book.save).to eq(false)
+        end
+        it "ensure book has invt key" do
+          @book.invt = nil
+          expect(@book.save).to eq(false)  
+        end
+        it "ensure book has a description" do
+          @book.description = nil
+          # @book.description = ""
+          expect(@book.save).to eq(false)
+        end
+        it "ensure book has a price, price must be a number greather than 0" do
+          array = [nil, 0, -1, ""]
+
+          array.each do |element|
+            @book.price = element
+            expect(@book.save).to eq(false)  
+          end
+        end
+      end
   end
-  
 end
