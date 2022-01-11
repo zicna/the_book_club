@@ -28,6 +28,9 @@ ___
 
 ___
 ##  Description
+
+
+
 ___
 
 
@@ -90,6 +93,11 @@ ___
  ___
 
 ##  How To Use
+
+After all steps from **Installation** are done we can check three pages in our application without signing or logging in, _HOME_, _ABOUT_, and _CONTACT_. 
+Logging in and signing in is possible through _GOOGLE_ or simply creating a new user via the form provided and then later on logging in using email and password.
+After we are logged in we gain access to the _BOOKS_, _AUTHORS_, _CATEGORIES_. All these newly added pages have lists of respective entities and we can visit their show, edit, and new pages.
+In the end, we have a PROFILE page of a current user where all activities will be shown.
 ___
 ## Tests
 All tests are located in the **spec** folder and they are divided into folders based on what are they testing(models, routing,...).
