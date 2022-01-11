@@ -1,18 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 
 authors = [
     {
@@ -247,12 +232,6 @@ categories = [
     {name: "Narrative poem", description: "Narrative poetry tells stories through verse. Like a novel or a short story, a narrative poem has plot, characters, and setting. Using a range of poetic techniques such as rhyme and meter, narrative poetry presents a series of events, often including action and dialogue."}
 ]
 
-
-
-
-
-
-
 categories.map do |category|
     Category.find_or_create_by(name: category[:name]) do |c| 
         c.name = category[:name]
@@ -261,12 +240,7 @@ categories.map do |category|
     end
 end
 
-
-
-
-# author_id = 0
 authors.each do |attributes|
-    # author_id += 1
     Author.create(
         first_name: attributes[:first_name],
         last_name: attributes[:last_name],
@@ -275,12 +249,9 @@ authors.each do |attributes|
         death_date: attributes[:death_date],
         wiki_page: attributes[:wiki_page]
         )
-        # p author_id
 end
 
-# book_id = 0
 books.each do |book|
-    # book_id +=1
     Book.create(
         author_id: book[:author_id],
         category_id: book[:category_id],
@@ -289,7 +260,6 @@ books.each do |book|
         description: book[:description],
         price: book[:price]
         )
-        # p book_id
 end
 
 User.create(
@@ -300,4 +270,10 @@ User.create(
     admin: true,
     birth_date: "01/01/2001"
 )
-puts "data loaded successfully"
+bar = TTY::ProgressBar.new("seeding. . .  [:bar]", total: 50)
+50.times do
+    sleep(0.01)
+    bar.advance  # by default increases by 1
+  end
+puts "✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅ ✅"
+puts "database seeded successfully"

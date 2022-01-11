@@ -40,6 +40,7 @@ gem 'sprockets', '~> 3.7.2'
 gem 'table_print'
 
 group :development, :test do
+  gem "tty-progressbar"
   gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -67,7 +68,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  gem 'sqlite3', '~> 1.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
