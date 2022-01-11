@@ -64,11 +64,28 @@ ___
 ##  <spam style="color:orange">How To Use</spam>
 ___
 ## <spam style="color:orange">Tests</spam>
+All tests are located in the **spec** folder and they are divided into folders based on what are they testing(models, routing,...).
+
+To run all the tests we need to <spam style="color:green">run</spam> `rspec spec` command in our terminal.
 #### <spam style="color:orange">Model testing</spam>
+All model tests are located at `./spec/models/` folder, devided into different files, one file for one model(`author_spec.rb` test file  for `author.rb` model).
+
+To <spam style="color:green">run</spam> all model tests: `rspec spec/models`.
+
+To <spam style="color:green">run</spam> specific model tests: `rspec spec/models/--file_name--`
 #### <spam style="color:orange">Route testing</spam>
+All routes tests are located at `./spec/routing/add_routing_spec.rb`.
+
+To <spam style="color:green">run</spam> all routes tests: `rspec spec/routing` or `rspec spec/routing/add_routing_spec.rb` since there is only one file it *routing folder*.
 
 ___
 ## <spam style="color:orange">Future uppgrades</spam>
+- [x] Fix readme.md 
+- [x] Add tests for routes
+- [x] Add tests for models 
+- [ ] Add tests for controller
+- [ ] More functionality for users profile page
+- [ ] Use `active-storage` gem for saving files instad of links to images on web  
 ___
 ##  <spam style="color:orange">Contributing</spam>
 
