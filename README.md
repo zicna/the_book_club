@@ -1,4 +1,4 @@
-# 📚 Book Store Project 📚
+# 📚 The Book Club 📚
 ___
 
 
@@ -8,7 +8,7 @@ This application is meant to be a place for users to add authors, books or categ
 ___
 
 ## Table of Content</spam>
-- [📚 Book Store Project 📚](#-book-store-project-)
+- [📚 The Book Club 📚](#-the-book-club-)
   - [Table of Content</spam>](#table-of-contentspam)
   - [Specification](#specification)
       - [Versioning](#versioning)
