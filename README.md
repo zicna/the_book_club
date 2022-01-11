@@ -14,13 +14,13 @@ ___
   - [<spam style="color:orange">Specification</spam>](#spam-stylecolororangespecificationspam)
       - [<spam style="color:orange">Versioning](#spam-stylecolororangeversioning)
       - [<spam style="color:orange">Database</spam>](#spam-stylecolororangedatabasespam)
-      - [<spam style="color:orange">File Structure</spam>](#spam-stylecolororangefile-structurespam)
   - [<spam style="color:orange">Instalation</spam>](#spam-stylecolororangeinstalationspam)
   - [<spam style="color:orange">How To Use</spam>](#spam-stylecolororangehow-to-usespam)
   - [<spam style="color:orange">Tests</spam>](#spam-stylecolororangetestsspam)
       - [<spam style="color:orange">Model testing</spam>](#spam-stylecolororangemodel-testingspam)
       - [<spam style="color:orange">Route testing</spam>](#spam-stylecolororangeroute-testingspam)
   - [<spam style="color:orange">Future uppgrades</spam>](#spam-stylecolororangefuture-uppgradesspam)
+  - [<spam style="color:orange">Contributing</spam>](#spam-stylecolororangecontributingspam)
   - [<spam style="color:orange">Bugs</spam>](#spam-stylecolororangebugsspam)
   - [<spam style="color:orange">License</spam>](#spam-stylecolororangelicensespam)
 - [README](#readme)
@@ -46,12 +46,20 @@ Database used for building this application is `SQLite`, version: `SQLite versio
 
 ![Database schema](public/Book_Club_DB.jpeg)
 *<p align="center"> Database schema </p>*
-#### <spam style="color:orange">File Structure</spam>
-
 
 ___
 ## <spam style="color:orange">Instalation</spam>
-___
+
+1. **<spam style="color:green">fork**</spam> this this repository
+2. **<spam style="color:green">clone**</spam> this (with SSH key) to your local environment
+3. **<spam style="color:green">navigate**</spam> to root directory
+4. **<spam style="color:green">run</spam>** `bundle install` to track and install the exact gems and versions that are needed.
+5. **<spam style="color:green">run</spam>** `rails db:migrate` to change database schema based of migrations (found id `./db/migrate/...`)
+6. **<spam style="color:green">run</spam>** `rails db:seed` to seed database with dummy data so we would have data to work with
+7. **<spam style="color:green">run</spam>** `rails server` to start *localhost* on port *3000*
+8. **<spam style="color:green">navigate</spam>** browser to `http://localhost:3000/` where our application is being hosted
+
+ ___
 
 ##  <spam style="color:orange">How To Use</spam>
 ___
@@ -62,9 +70,14 @@ ___
 ___
 ## <spam style="color:orange">Future uppgrades</spam>
 ___
+##  <spam style="color:orange">Contributing</spam>
+
+___
 ##  <spam style="color:orange">Bugs</spam>
 ___
 ##  <spam style="color:orange">License</spam>
+This application is avaiable as open source under the terms of the [MIT License](LICENSE).
+___
 
 
 
