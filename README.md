@@ -10,7 +10,6 @@ ___
 ## Table of Content</spam>
 - [📚 Book Store Project 📚](#-book-store-project-)
   - [Table of Content</spam>](#table-of-contentspam)
-  - [Description](#description)
   - [Specification](#specification)
       - [Versioning](#versioning)
       - [System dependencies](#system-dependencies)
@@ -27,12 +26,6 @@ ___
   - [License](#license)
 
 ___
-##  Description
-
-
-
-___
-
 
 ## Specification
 #### Versioning
