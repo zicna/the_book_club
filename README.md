@@ -13,6 +13,7 @@ ___
   - [<spam style="color:orange">Description</spam>](#spam-stylecolororangedescriptionspam)
   - [<spam style="color:orange">Specification</spam>](#spam-stylecolororangespecificationspam)
       - [<spam style="color:orange">Versioning](#spam-stylecolororangeversioning)
+      - [<spam style="color:orange">System dependencies</spam>](#spam-stylecolororangesystem-dependenciesspam)
       - [<spam style="color:orange">Database</spam>](#spam-stylecolororangedatabasespam)
   - [<spam style="color:orange">Instalation</spam>](#spam-stylecolororangeinstalationspam)
   - [<spam style="color:orange">How To Use</spam>](#spam-stylecolororangehow-to-usespam)
@@ -21,7 +22,7 @@ ___
       - [<spam style="color:orange">Route testing</spam>](#spam-stylecolororangeroute-testingspam)
   - [<spam style="color:orange">Future uppgrades</spam>](#spam-stylecolororangefuture-uppgradesspam)
   - [<spam style="color:orange">Contributing</spam>](#spam-stylecolororangecontributingspam)
-  - [<spam style="color:orange">Bugs</spam>](#spam-stylecolororangebugsspam)
+  - [<spam style="color:orange">🐛 🐛 🐛 Bugs 🐛 🐛 🐛</spam>](#spam-stylecolororange---bugs---spam)
   - [<spam style="color:orange">License</spam>](#spam-stylecolororangelicensespam)
 - [README](#readme)
 
@@ -39,6 +40,33 @@ With Ruby on Rails framework version:
 `Rails 6.1.4`
 
 <spam style="color:yellow">*NOTE: This can be checked by running `ruby -v ` and `rails -v ` in root folder of this application.* </spam>
+
+#### <spam style="color:orange">System dependencies</spam>
+  - Saving hashed passwords into database: 
+  
+  ```
+  'bcrypt', '~> 3.1.7'
+  ``` 
+  - Authentication with google: 
+  ```
+'omniauth'
+'omniauth-google-oauth2'
+'omniauth-rails_csrf_protection'
+  ```
+ - Styling and icons:
+  ```
+'bootsnap'
+'bootstrap-sass', '~> 3.1.1'
+'font-awesome-rails'
+'font-awesome-sass', '~> 5.15.1'
+  ```
+  - Testing
+  ```
+'capybara', '>= 3.26'
+'rspec-rails', ">=3.9.0"
+  ```
+All gems used in this application can be found in `Gemfile`
+
 #### <spam style="color:orange">Database</spam>
 Database used for building this application is `SQLite`, version: `SQLite version 3.36.0`. 
 
@@ -90,7 +118,7 @@ ___
 ##  <spam style="color:orange">Contributing</spam>
 
 ___
-##  <spam style="color:orange">Bugs</spam>
+##  <spam style="color:orange">🐛 🐛 🐛 Bugs 🐛 🐛 🐛</spam>
 ___
 ##  <spam style="color:orange">License</spam>
 This application is avaiable as open source under the terms of the [MIT License](LICENSE).
