@@ -1,4 +1,9 @@
+<center>
+
 # 📚 The Book Club 📚
+
+</center>
+
 ___
 
 
@@ -72,8 +77,12 @@ Database used for building this application is `SQLite`, version: `SQLite versio
 
 <spam style="color:yellow">*NOTE: This can be checked by running `rails db`.* </spam>
 
+<details>
+
 ![Database schema](public/Book_Club_DB.jpeg)
 *<p align="center"> Database schema </p>*
+
+</details>
 
 ___
 ## Instalation
